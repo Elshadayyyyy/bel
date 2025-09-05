@@ -1,15 +1,19 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
-import solutionHero from "./../assets/solutionpage/solutionHero.png"
-import ERPforTextile from "./../assets/solutionpage/ERPforTextile.png"
-import charityForSccma from "./../assets/solutionpage/charityForSccma.png"
-import retailAutomation from "./../assets/solutionpage/retailAutomation.png"
-import above_the_footer from "./../assets/above_the_footer.png"
+import { Link } from 'react-router-dom';
+
+import solutionHero from "./../assets/solutionpage/solutionHero.png";
+import ERPforTextile from "./../assets/solutionpage/ERPforTextile.png";
+import charityForSccma from "./../assets/solutionpage/charityForSccma.png";
+import retailAutomation from "./../assets/solutionpage/retailAutomation.png";
+import above_the_footer from "./../assets/above_the_footer.png";
 
 const SolutionsPage = () => {
   return (
     <div className="min-h-screen bg-white font-sans text-gray-800 antialiased">
-      <section className=" bg-white relative w-full h-[200px] md:h-[30px] lg:h-[400px] overflow-hidden">
+
+      {/* Hero Section */}
+      <section className="bg-white relative w-full h-[200px] md:h-[30px] lg:h-[400px] overflow-hidden">
         <img
           src={solutionHero}
           alt="solution Hero"
@@ -24,8 +28,7 @@ const SolutionsPage = () => {
         </div>
       </section>
 
-
-
+      {/* Success Stories */}
       <section className="container mx-auto my-16 px-4 md:px-8 lg:px-12">
         <div className="text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">Success Stories</h2>
@@ -35,6 +38,8 @@ const SolutionsPage = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+          {/* ERP for Textile */}
           <Card className="border-0 flex flex-col rounded-lg shadow-md">
             <img
               src={ERPforTextile}
@@ -48,14 +53,19 @@ const SolutionsPage = () => {
               <CardDescription>
                 Deployed a full-scale Odoo ERP to manage production, sales, inventory, and logistics for an East African textile plant.
               </CardDescription>
-              <a href="ERPDetail" className="mt-4 flex items-center text-sm font-medium text-[#61C7D5] hover:text-[#61C7D5]-700">
+              <Link
+                to="/ERPDetail"
+                className="mt-4 flex items-center text-sm font-medium text-[#61C7D5] hover:text-[#61C7D5]-700"
+              >
                 Read More
                 <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </a>
+              </Link>
             </CardContent>
           </Card>
+
+          {/* Charity Platform */}
           <Card className="border-0 flex flex-col rounded-lg shadow-md">
             <img
               src={charityForSccma}
@@ -69,15 +79,19 @@ const SolutionsPage = () => {
               <CardDescription>
                 Built a volunteer & donation portal with dashboards, secure processes, and automated reports.
               </CardDescription>
-              <a href="CharityPlatform" className="mt-4 flex items-center text-sm font-medium text-[#61C7D5] hover:text-[#61C7D5]-700">
+              <Link
+                to="/CharityPlatform"
+                className="mt-4 flex items-center text-sm font-medium text-[#61C7D5] hover:text-[#61C7D5]-700"
+              >
                 Read More
                 <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </a>
+              </Link>
             </CardContent>
           </Card>
 
+          {/* Retail Automation */}
           <Card className="border-0 flex flex-col rounded-lg shadow-md">
             <img
               src={retailAutomation}
@@ -91,17 +105,22 @@ const SolutionsPage = () => {
               <CardDescription>
                 Automated sales-stock syncing for a regional retail chain, ensuring accurate inventory across branches.
               </CardDescription>
-              <a href="RetailAuto" className="mt-4 flex items-center text-sm font-medium text-[#61C7D5] hover:text-[#61C7D5]-700">
+              <Link
+                to="/RetailAuto"
+                className="mt-4 flex items-center text-sm font-medium text-[#61C7D5] hover:text-[#61C7D5]-700"
+              >
                 Read More
                 <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </a>
+              </Link>
             </CardContent>
           </Card>
 
         </div>
       </section>
+
+      {/* CTA Section */}
       <section
         className="relative py-10 text-white"
         style={{
