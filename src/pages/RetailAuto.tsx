@@ -29,9 +29,7 @@ const RetailAuto = () => {
             </h1>
             <div className="h-0.5 bg-[#858585] w-full rounded"></div>
           </div>
-          <p className="mt-2 text-gray-600">
-            Automated sales-stock syncing for a regional retail chain, ensuring accurate inventory across branches.
-          </p>
+         
         </div>
         <div className="border-0 rounded-lg shadow-md p-6 bg-gray-100 flex flex-col items-center text-center justify-center">
           <h2 className="text-2xl font-bold mb-4">Subscribe</h2>
@@ -58,6 +56,12 @@ const RetailAuto = () => {
           backgroundPosition: "center",
         }}
       >
+         <div
+    className="absolute inset-0 z-0"
+    style={{
+      backgroundColor: "rgba(0, 0, 0, 0.6)", 
+    }}
+  ></div>
         <div
           className="absolute inset-0 z-0"
           style={{

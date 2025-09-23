@@ -1,12 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
-
-import solutionHero from "./../assets/solutionpage/solutionHero.png";
-import ERPforTextile from "./../assets/solutionpage/ERPforTextile.png";
-import charityForSccma from "./../assets/solutionpage/charityForSccma.png";
-import retailAutomation from "./../assets/solutionpage/retailAutomation.png";
-import above_the_footer from "./../assets/above_the_footer.png";
+import solutionHero from "../assets/solutionpage/solutionHero.png";
+import ERPforTextile from "../assets/solutionpage/ERPforTextile.png";
+import charityForSccma from "../assets/solutionpage/charityForSccma.png";
+import retailAutomation from "../assets/solutionpage/retailAutomation.png";
+import above_the_footer from "../assets/above_the_footer.png";
 
 const SolutionsPage = () => {
   return (
@@ -21,9 +20,9 @@ const SolutionsPage = () => {
           className="absolute inset-0"
           style={{
             background: `
-        linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)),
-        linear-gradient(to left, rgba(39,162,216,0.5) 0%, rgba(39,162,216,0.0) 40%)
-      `,
+              linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)),
+              linear-gradient(to left, rgba(39,162,216,0.5) 0%, rgba(39,162,216,0.0) 40%)
+            `,
           }}
         ></div>
         <div className="absolute inset-0 flex items-center">
@@ -39,7 +38,7 @@ const SolutionsPage = () => {
         <div className="absolute bottom-0 w-full h-1 bg-white"></div>
       </section>
 
-      <section className="container mx-auto my-8 px-4 md:px-8 lg:px-12">
+      <section className="container mx-auto my-12 px-4 md:px-8 lg:px-12">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Success Stories
@@ -51,75 +50,81 @@ const SolutionsPage = () => {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-          <Card className="border-0 flex flex-col rounded-lg shadow-md">
+          <Card className="border border-gray-200 flex flex-col rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
             <img
               src={ERPforTextile}
               alt="ERP for Textile Manufacturer"
               className="w-full aspect-video rounded-t-lg object-cover"
             />
-            <CardHeader className="px-6 pt-4 pb-2">
-              <CardTitle className="text-xl font-bold ">ERP for a Textile Manufacturer</CardTitle>
+            <CardHeader className="px-6 pt-5 pb-3">
+              <CardTitle className="text-xl font-bold leading-snug mb-1">
+                ERP for a Textile Manufacturer
+              </CardTitle>
             </CardHeader>
-            <CardContent className="px-6">
-              <CardDescription className="text-base font-normal text-black">
+            <CardContent className="px-6 pb-6">
+              <CardDescription className="text-base font-normal text-gray-700 leading-relaxed">
                 Deployed a full-scale Odoo ERP to manage production, sales, inventory, and logistics for an East African textile plant.
               </CardDescription>
               <Link
                 to="/ERPDetail"
-                className="mt-4 flex items-center text-[#27A2D8] font-medium hover:underline"
+                className="mt-4 inline-flex items-center text-[#27A2D8] font-medium hover:underline hover:translate-x-1 transition-transform duration-200 group"
               >
-                <span>Read More</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <span className="group-hover:font-semibold">Read More</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
             </CardContent>
           </Card>
 
-          <Card className="border-0 flex flex-col rounded-lg shadow-md">
+          <Card className="border border-gray-200 flex flex-col rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
             <img
               src={charityForSccma}
               alt="Charity Platform"
               className="w-full aspect-video rounded-t-lg object-cover"
             />
-            <CardHeader className="px-6 pt-4 pb-2">
-              <CardTitle className="text-xl font-bold ">Charity Platform for SCCMA</CardTitle>
+            <CardHeader className="px-6 pt-5 pb-3">
+              <CardTitle className="text-xl font-bold leading-snug mb-1">
+                Charity Platform for SCCMA
+              </CardTitle>
             </CardHeader>
-            <CardContent className="px-6 ">
-              <CardDescription className="text-base font-normal text-black">
+            <CardContent className="px-6 pb-6">
+              <CardDescription className="text-base font-normal text-gray-700 leading-relaxed">
                 Built a volunteer & donation portal with dashboards, secure processes, and automated reports.
               </CardDescription>
               <Link
                 to="/CharityPlatform"
-                className="mt-4 flex items-center text-[#27A2D8] font-medium hover:underline"
+                className="mt-4 inline-flex items-center text-[#27A2D8] font-medium hover:underline hover:translate-x-1 transition-transform duration-200 group"
               >
-                <span>Read More</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <span className="group-hover:font-semibold">Read More</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
             </CardContent>
           </Card>
 
-          <Card className="border-0 flex flex-col rounded-lg shadow-md">
+          <Card className="border border-gray-200 flex flex-col rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
             <img
               src={retailAutomation}
               alt="Retail Automation"
               className="w-full aspect-video rounded-t-lg object-cover"
             />
-            <CardHeader className="px-6 pt-4 pb-2">
-              <CardTitle className="text-xl font-bold ">Retail Automation</CardTitle>
+            <CardHeader className="px-6 pt-5 pb-3">
+              <CardTitle className="text-xl font-bold leading-snug mb-1">
+                Retail Automation
+              </CardTitle>
             </CardHeader>
-            <CardContent className="px-6 ">
-              <CardDescription className="text-base font-normal text-black">
+            <CardContent className="px-6 pb-6">
+              <CardDescription className="text-base font-normal text-gray-700 leading-relaxed">
                 Automated sales-stock syncing for a regional retail chain, ensuring accurate inventory across branches.
               </CardDescription>
               <Link
                 to="/RetailAuto"
-                className="mt-4 flex items-center text-[#27A2D8] font-medium hover:underline"
+                className="mt-4 inline-flex items-center text-[#27A2D8] font-medium hover:underline hover:translate-x-1 transition-transform duration-200 group"
               >
-                <span>Read More</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <span className="group-hover:font-semibold">Read More</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
@@ -137,6 +142,12 @@ const SolutionsPage = () => {
           backgroundPosition: "center",
         }}
       >
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
+          }}
+        ></div>
         <div
           className="absolute inset-0 z-0"
           style={{

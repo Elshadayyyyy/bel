@@ -76,7 +76,7 @@ const Homepage: React.FC = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-transparent"
+                    className="border-white text-white px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-transparent"
                     onClick={() => (window.location.href = "/Contact")}
                   >
                     See Live Demo
@@ -86,7 +86,7 @@ const Homepage: React.FC = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-transparent"
+                  className="border-white text-white px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-transparent"
                   onClick={() => (window.location.href = "/Contact")}
                 >
                   Book a Demo
@@ -138,8 +138,7 @@ const Homepage: React.FC = () => {
                       Odoo ERP Implementation
                     </h3>
                     <p className="text-base font-normal text-black mb-6">
-                      Complete ERP solutions tailored for African businesses
-                      with full implementation support and training.
+                      Complete ERP solutions tailored for African businesses with full implementation support and training.
                     </p>
                     <a
                       onClick={() => (window.location.href = "/Services")}
@@ -164,8 +163,7 @@ const Homepage: React.FC = () => {
                       Business Automation & Integration
                     </h3>
                     <p className="text-base font-normal text-black mb-4">
-                      Complete ERP solutions tailored for African businesses
-                      with full implementation support and training.
+                      Complete ERP solutions tailored for African businesses with full implementation support and training.
                     </p>
                     <a
                       onClick={() => (window.location.href = "/Services")}
@@ -190,8 +188,7 @@ const Homepage: React.FC = () => {
                       Custom Software Development
                     </h3>
                     <p className="text-base font-normal text-black mb-4">
-                      Tailored solutions built to scale with your business needs
-                      and requirements.
+                      Complete ERP solutions tailored for African businesses with full implementation support and training.
                     </p>
                     <a
                       onClick={() => (window.location.href = "/Services")}
@@ -526,6 +523,12 @@ const Homepage: React.FC = () => {
             backgroundPosition: "center",
           }}
         >
+           <div
+    className="absolute inset-0 z-0"
+    style={{
+      backgroundColor: "rgba(0, 0, 0, 0.6)", 
+    }}
+  ></div>
           <div
             className="absolute inset-0 z-0"
             style={{

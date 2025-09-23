@@ -1,6 +1,6 @@
 import { Button } from "../components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/card";
-import Hero from "./../assets/insightpage/hero.png";
+import Hero from "./../assets/insightpage/hero1.jpg";
 import ERPdrivesROI from "./../assets/insightpage/ERPdrivesROI.png"
 import RealWorldWorkFow from "./../assets/insightpage/RealWorldWorkFow.png"
 import DigitalTransformation from "./../assets/insightpage/DigitalTransformation.png"
@@ -18,19 +18,22 @@ interface ArticleCardProps {
 
 const ArticleCard = ({ imageSrc, date, title, description }: ArticleCardProps) => {
   return (
-    <Card className="bg-white border border-gray-200 max-w-sm rounded-lg overflow-hidden shadow-sm transition-transform duration-150 hover:scale-[1.01] hover:shadow-sm">
-      <div className="-mt-6">
-        <img className="w-full h-48 object-cover rounded-t-lg" src={imageSrc} alt={title} />
-      </div>
-      <CardHeader className="pt-4">
+    <Card className="border border-gray-200 flex flex-col rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
+      <img className="w-full aspect-video rounded-t-lg object-cover" src={imageSrc} alt={title} />
+      <CardHeader className="px-6 pt-5 pb-3">
         <p className="text-sm text-gray-500 font-medium">{date}</p>
-        <CardTitle className="text-lg font-bold mt-1 leading-snug">{title}</CardTitle>
+        <CardTitle className="text-xl font-bold leading-snug">{title}</CardTitle>
       </CardHeader>
-      <CardContent>
-        <CardDescription className="text-gray-700 text-base">{description}</CardDescription>
+      <CardContent className="px-6 pb-2">
+        <CardDescription className="text-gray-700 text-base leading-relaxed">{description}</CardDescription>
       </CardContent>
-      <CardFooter>
-        <a href="#" className="text-[#27A2D8] hover:underline font-semibold">Read More</a>
+      <CardFooter className="px-6 pb-4">
+        <a href="#" className="inline-flex items-center text-[#27A2D8] font-medium hover:underline hover:translate-x-1 transition-transform duration-200">
+          <span>Read More</span>
+          <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
       </CardFooter>
     </Card>
   );
@@ -63,13 +66,11 @@ const Insight = () => {
             </p>
           </div>
         </div>
-
         <div className="absolute bottom-0 w-full h-1 bg-white"></div>
       </section>
 
-
       <section className="py-10 px-4 sm:px-8 lg:px-16">
-        <div className="container mx-auto">
+        <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">
               Latest Articles
@@ -79,7 +80,7 @@ const Insight = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
             <ArticleCard
               imageSrc={ERPdrivesROI}
               date="May 15, 2025"
@@ -129,7 +130,6 @@ const Insight = () => {
         </div>
       </section>
 
-
       <section
         className="relative py-10 text-white"
         style={{
@@ -138,6 +138,12 @@ const Insight = () => {
           backgroundPosition: "center",
         }}
       >
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
+          }}
+        ></div>
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -163,8 +169,6 @@ const Insight = () => {
           </div>
         </div>
       </section>
-
-
     </div>
   );
 };

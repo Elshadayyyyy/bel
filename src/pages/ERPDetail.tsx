@@ -56,6 +56,12 @@ const ERPDetail = () => {
           backgroundPosition: "center",
         }}
       >
+         <div
+    className="absolute inset-0 z-0"
+    style={{
+      backgroundColor: "rgba(0, 0, 0, 0.6)", 
+    }}
+  ></div>
         <div
           className="absolute inset-0 z-0"
           style={{
