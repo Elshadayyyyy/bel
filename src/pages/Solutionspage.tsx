@@ -1,7 +1,6 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
-import solutionHero from "../assets/solutionpage/solutionHero.png";
+import solutionHero from "../assets/solutionpage/heroNew.png";
 import ERPforTextile from "../assets/solutionpage/ERPforTextile.png";
 import charityForSccma from "../assets/solutionpage/charityForSccma.png";
 import retailAutomation from "../assets/solutionpage/retailAutomation.png";
@@ -30,9 +29,6 @@ const SolutionsPage = () => {
             <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">
               Solution in Action
             </h1>
-            <p className="mt-4 text-lg md:text-xl max-w-2xl">
-              See how we've helped businesses streamline their operations with powerful, customized software.
-            </p>
           </div>
         </div>
         <div className="absolute bottom-0 w-full h-1 bg-white"></div>
@@ -48,90 +44,82 @@ const SolutionsPage = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-          <Card className="border border-gray-200 flex flex-col rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
-            <img
-              src={ERPforTextile}
-              alt="ERP for Textile Manufacturer"
-              className="w-full aspect-video rounded-t-lg object-cover"
-            />
-            <CardHeader className="px-6 pt-5 pb-3">
-              <CardTitle className="text-xl font-bold leading-snug mb-1">
-                ERP for a Textile Manufacturer
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="px-6 pb-6">
-              <CardDescription className="text-base font-normal text-gray-700 leading-relaxed">
-                Deployed a full-scale Odoo ERP to manage production, sales, inventory, and logistics for an East African textile plant.
-              </CardDescription>
-              <Link
-                to="/ERPDetail"
-                className="mt-4 inline-flex items-center text-[#27A2D8] font-medium hover:underline hover:translate-x-1 transition-transform duration-200 group"
-              >
-                <span className="group-hover:font-semibold">Read More</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </CardContent>
-          </Card>
+  <div className="border border-gray-200 flex flex-col rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
+    <img
+      src={ERPforTextile}
+      alt="ERP for Textile Manufacturer"
+      className="w-full aspect-video object-cover"
+    />
+    <div className="px-6 pt-4 pb-3">
+      <h3 className="text-xl font-bold leading-snug mb-1">
+        ERP for a Textile Manufacturer
+      </h3>
+    </div>
+    <div className="px-6 pb-6">
+      <p className="text-base font-normal text-gray-700 leading-relaxed">
+        Deployed a full-scale Odoo ERP to manage production, sales, inventory, and logistics for an East African textile plant.
+      </p>
+      <Link
+        to="/ERPDetail"
+        className="mt-4 inline-block text-[#27A2D8] font-medium hover:underline hover:translate-x-1 transition-transform duration-200"
+      >
+        Read More
+      </Link>
+    </div>
+  </div>
 
-          <Card className="border border-gray-200 flex flex-col rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
-            <img
-              src={charityForSccma}
-              alt="Charity Platform"
-              className="w-full aspect-video rounded-t-lg object-cover"
-            />
-            <CardHeader className="px-6 pt-5 pb-3">
-              <CardTitle className="text-xl font-bold leading-snug mb-1">
-                Charity Platform for SCCMA
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="px-6 pb-6">
-              <CardDescription className="text-base font-normal text-gray-700 leading-relaxed">
-                Built a volunteer & donation portal with dashboards, secure processes, and automated reports.
-              </CardDescription>
-              <Link
-                to="/CharityPlatform"
-                className="mt-4 inline-flex items-center text-[#27A2D8] font-medium hover:underline hover:translate-x-1 transition-transform duration-200 group"
-              >
-                <span className="group-hover:font-semibold">Read More</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </CardContent>
-          </Card>
+  <div className="border border-gray-200 flex flex-col rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
+    <img
+      src={charityForSccma}
+      alt="Charity Platform"
+      className="w-full aspect-video object-cover"
+    />
+    <div className="px-6 pt-4 pb-3">
+      <h3 className="text-xl font-bold leading-snug mb-1">
+        Charity Platform for SCCMA
+      </h3>
+    </div>
+    <div className="px-6 pb-6">
+      <p className="text-base font-normal text-gray-700 leading-relaxed">
+        Built a volunteer & donation portal with dashboards, secure processes, and automated reports.
+      </p>
+      <Link
+        to="/CharityPlatform"
+        className="mt-4 inline-block text-[#27A2D8] font-medium hover:underline hover:translate-x-1 transition-transform duration-200"
+      >
+        Read More
+      </Link>
+    </div>
+  </div>
 
-          <Card className="border border-gray-200 flex flex-col rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
-            <img
-              src={retailAutomation}
-              alt="Retail Automation"
-              className="w-full aspect-video rounded-t-lg object-cover"
-            />
-            <CardHeader className="px-6 pt-5 pb-3">
-              <CardTitle className="text-xl font-bold leading-snug mb-1">
-                Retail Automation
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="px-6 pb-6">
-              <CardDescription className="text-base font-normal text-gray-700 leading-relaxed">
-                Automated sales-stock syncing for a regional retail chain, ensuring accurate inventory across branches.
-              </CardDescription>
-              <Link
-                to="/RetailAuto"
-                className="mt-4 inline-flex items-center text-[#27A2D8] font-medium hover:underline hover:translate-x-1 transition-transform duration-200 group"
-              >
-                <span className="group-hover:font-semibold">Read More</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </CardContent>
-          </Card>
+  <div className="border border-gray-200 flex flex-col rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
+    <img
+      src={retailAutomation}
+      alt="Retail Automation"
+      className="w-full aspect-video object-cover"
+    />
+    <div className="px-6 pt-4 pb-3">
+      <h3 className="text-xl font-bold leading-snug mb-1">
+        Retail Automation
+      </h3>
+    </div>
+    <div className="px-6 pb-6">
+      <p className="text-base font-normal text-gray-700 leading-relaxed">
+        Automated sales-stock syncing for a regional retail chain, ensuring accurate inventory across branches.
+      </p>
+      <Link
+        to="/RetailAuto"
+        className="mt-4 inline-block text-[#27A2D8] font-medium hover:underline hover:translate-x-1 transition-transform duration-200"
+      >
+        Read More
+      </Link>
+    </div>
+  </div>
 
-        </div>
+</div>
+
       </section>
 
       <section

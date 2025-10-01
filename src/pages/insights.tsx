@@ -1,6 +1,6 @@
 import { Button } from "../components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/card";
-import Hero from "./../assets/insightpage/hero1.jpg";
+import Hero from "./../assets/insightpage/heroNew.png";
 import ERPdrivesROI from "./../assets/insightpage/ERPdrivesROI.png"
 import RealWorldWorkFow from "./../assets/insightpage/RealWorldWorkFow.png"
 import DigitalTransformation from "./../assets/insightpage/DigitalTransformation.png"
@@ -30,9 +30,6 @@ const ArticleCard = ({ imageSrc, date, title, description }: ArticleCardProps) =
       <CardFooter className="px-6 pb-4">
         <a href="#" className="inline-flex items-center text-[#27A2D8] font-medium hover:underline hover:translate-x-1 transition-transform duration-200">
           <span>Read More</span>
-          <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
         </a>
       </CardFooter>
     </Card>

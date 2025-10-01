@@ -5,6 +5,7 @@ import { Textarea } from "../components/ui/textarea";
 import toast, { Toaster } from "react-hot-toast";
 import contactHero from "./../assets/contactHero.png";
 import above_the_footer from "./../assets/above_the_footer.png";
+import { Dot } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -79,7 +80,9 @@ const Contact = () => {
               Contact Us
             </h1>
             <p className="mt-4 text-lg md:text-xl max-w-2xl">
-              Want to discuss a project or ask questions? Please feel free to contact us.
+              Want to discuss a project or ask questions? 
+              <br />
+              Please feel free to contact us.
               <br />
               We're here to help you transform your business.
             </p>
@@ -100,29 +103,45 @@ const Contact = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <div>
-                  <p className="font-semibold">Bole Sub City, Addis Ababa, Ethiopia, East Africa</p>
-                </div>
+              <div className="flex items-center gap-0.4">
+  <Dot className="h-8 w-8 text-black" />
+  <p className="font-semibold">Bole Sub City, Addis Ababa, Ethiopia, East Africa</p>
+</div>
+
               </div>
 
               <div className="flex items-center space-x-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#27A2D8]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <div>
-                  <p className="font-semibold">+251 911 123 456</p>
-                  <p className="font-semibold">+251 911 789 012</p>
-                </div>
+               <div className="flex flex-col gap-1">
+  <div className="flex items-center gap-0.4">
+    <Dot className="h-8 w-8 text-black" />
+    <p className="font-semibold">+251 911 123 456</p>
+  </div>
+  <div className="flex items-center gap-0.4">
+    <Dot className="h-8 w-8 text-black" />
+    <p className="font-semibold">+251 911 789 012</p>
+  </div>
+</div>
+
               </div>
 
               <div className="flex items-center space-x-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#27A2D8]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <div>
-                  <p className="font-semibold">info@beltechsolutions.com</p>
-                  <p className="font-semibold">support@beltechsolutions.com</p>
-                </div>
+                <div className="flex flex-col gap-1">
+  <div className="flex items-center gap-0.4">
+    <Dot className="h-8 w-8 text-black" />
+    <p className="font-semibold">info@beltechsolutions.com</p>
+  </div>
+  <div className="flex items-center gap-0.4">
+    <Dot className="h-8 w-8 text-black" />
+    <p className="font-semibold">support@beltechsolutions.com</p>
+  </div>
+</div>
+
               </div>
             </div>
           </div>
@@ -135,7 +154,7 @@ const Contact = () => {
                   onChange={handleChange}
                   type="text"
                   placeholder="First Name*"
-                  className={`py-3 px-4 border border-gray-300 rounded-lg bg-gray-100 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 ${errors.firstName ? "border-red-500" : ""}`}
+                  className={`py-3 px-4 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 ${errors.firstName ? "border-red-500" : ""}`}
                 />
                 {errors.firstName && <p className="text-red-500 text-sm">{errors.firstName}</p>}
 
@@ -145,7 +164,7 @@ const Contact = () => {
                   onChange={handleChange}
                   type="text"
                   placeholder="Last Name*"
-                  className={`py-3 px-4 border border-gray-300 rounded-lg bg-gray-100 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 ${errors.lastName ? "border-red-500" : ""}`}
+                  className={`py-3 px-4 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 ${errors.lastName ? "border-red-500" : ""}`}
                 />
                 {errors.lastName && <p className="text-red-500 text-sm">{errors.lastName}</p>}
               </div>
@@ -156,7 +175,7 @@ const Contact = () => {
                 onChange={handleChange}
                 type="email"
                 placeholder="Email*"
-                className={`w-full py-3 px-4 border border-gray-300 rounded-lg bg-gray-100 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#61C7D5]/50 ${errors.email ? "border-red-500" : ""}`}
+                className={`w-full py-3 px-4 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#61C7D5]/50 ${errors.email ? "border-red-500" : ""}`}
               />
               {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
 
@@ -166,7 +185,7 @@ const Contact = () => {
                 onChange={handleChange}
                 type="tel"
                 placeholder="Phone Number*"
-                className={`w-full py-3 px-4 border border-gray-300 rounded-lg bg-gray-100 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 ${errors.phone ? "border-red-500" : ""}`}
+                className={`w-full py-3 px-4 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 ${errors.phone ? "border-red-500" : ""}`}
               />
               {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
 
@@ -176,7 +195,7 @@ const Contact = () => {
                 onChange={handleChange}
                 type="text"
                 placeholder="Organization*"
-                className={`w-full py-3 px-4 border border-gray-300 rounded-lg bg-gray-100 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 ${errors.organization ? "border-red-500" : ""}`}
+                className={`w-full py-3 px-4 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 ${errors.organization ? "border-red-500" : ""}`}
               />
               {errors.organization && <p className="text-red-500 text-sm">{errors.organization}</p>}
 
@@ -185,7 +204,7 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Your message..."
-                className={`w-full py-3 px-4 border border-gray-300 rounded-lg bg-gray-100 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 min-h-[150px] ${errors.message ? "border-red-500" : ""}`}
+                className={`w-full py-3 px-4 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 min-h-[150px] ${errors.message ? "border-red-500" : ""}`}
               />
               {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
 

@@ -1,6 +1,6 @@
 import { Target, Flag, Handshake, LineChart, Eye } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription } from "../components/ui/card";
-import abouthero from "./../assets/aboutPage/hero.png"
+import abouthero from "./../assets/aboutPage/heroNew.png"
 import beltech from "./../assets/aboutPage/beltech.jpg";
 import { Button } from "../components/ui/button";
 import above_the_footer from "./../assets/above_the_footer.png"
@@ -83,9 +83,9 @@ const About = () => {
               <div className="rounded-lg bg-white p-8 shadow-md">
                 <div className="mb-4 flex items-center">
                   <Target className="h-8 w-8 text-[#27A2D8] " />
-                  <h3 className="ml-4 text-2xl font-semibold text-gray-900">Our Mission</h3>
+                  <h3 className="ml-4 text-2xl font-bold text-gray-900">Our Mission</h3>
                 </div>
-                <p className="text-sm font-medium text-gray-500">
+                <p className="text-sm font-medium text-gray-900">
                   "To build scalable, efficient digital systems that empower local businesses."
                 </p>
                 <p className="mt-4 text-gray-600">
@@ -95,12 +95,12 @@ const About = () => {
               <div className="rounded-lg bg-white p-8 shadow-md">
                 <div className="mb-4 flex items-center">
                   <Eye className="h-8 w-8 text-[#27A2D8] " />
-                  <h3 className="ml-4 text-2xl font-semibold text-gray-900">Our Vision</h3>
+                  <h3 className="ml-4 text-2xl font-bold text-gray-900">Our Vision</h3>
                 </div>
-                <p className="text-sm font-medium text-gray-500">
+                <p className="text-sm font-medium text-gray-900">
                   "To be the #1 partner for ERP, automation, and software development in Africa by 2030."
                 </p>
-                <p className="mt-4 text-gray-600">
+                <p className="mt-4 text-gray-900">
                   We aim to lead the digital transformation of African businesses by providing innovative, reliable, and accessible technology solutions that drive growth and efficiency.
                 </p>
               </div>
@@ -110,7 +110,7 @@ const About = () => {
 
         <section className="container mx-auto my-10 px-4 md:px-8 lg:px-12">
           <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl">Core Values</h2>
-          <p className="mb-12 text-center text-gray-600">
+          <p className="mb-12 text-center text-gray-900">
             The principles that guide our work and define our company culture
           </p>
 

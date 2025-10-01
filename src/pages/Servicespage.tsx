@@ -1,8 +1,8 @@
 import { Button } from '../components/ui/button';
 import { Card, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { CheckCircle, Zap, Users, Globe, Settings } from 'lucide-react';
-import Hero from "./../assets/servicepage/hero.png";
-import ERPImp from "./../assets/servicepage/ERPImp.png";
+import Hero from "./../assets/servicepage/heroNew.png";
+import ERPImp from "./../assets/homepage/oddoNew.png";
 import customSoft from "./../assets/servicepage/customSoftware.png";
 import bussinesAuto from "./../assets/servicepage/businessAuto.png";
 import above_the_footer from "./../assets/above_the_footer.png";
@@ -160,55 +160,57 @@ const Servicespage = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 mt-12 md:grid-cols-2 lg:grid-cols-4">
-          <Card className="border-0 hover:shadow-lg transition-shadow duration-300 text-center shadow-xl">
-            <CardHeader>
-              <div className="mx-auto flex h-12 w-12 items-center justify-center">
-                <Users className="h-6 w-6 text-[#27A2D8]" />
-              </div>
-              <CardTitle className="mt-4">User Portals</CardTitle>
-              <CardDescription>
-                Customer and employee self-service portals
-              </CardDescription>
-            </CardHeader>
-          </Card>
+     <div className="grid grid-cols-1 gap-8 mt-12 md:grid-cols-2 lg:grid-cols-4">
+   <Card className="border-0 shadow-md hover:shadow-lg transition-shadow duration-300 text-center">
+    <CardHeader className="px-4 pt-1 pb-0">
+      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
+        <Users className="h-6 w-6 text-[#27A2D8]" />
+      </div>
+      <CardTitle className="mt-1 font-bold text-base">User Portals</CardTitle>
+      <CardDescription className="mt-1 text-sm text-gray-700">
+        Customer and employee self-service portals
+      </CardDescription>
+    </CardHeader>
+  </Card>
+  <Card className="border-0 shadow-md hover:shadow-lg transition-shadow duration-300 text-center">
+    <CardHeader className="px-4 pt-1 pb-1">
+      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
+        <Zap className="h-6 w-6 text-[#27A2D8]" />
+      </div>
+      <CardTitle className="mt-1 font-bold text-base">Internal Tools</CardTitle>
+      <CardDescription className="mt-1 text-sm text-gray-700">
+        Custom business applications and dashboards
+      </CardDescription>
+    </CardHeader>
+  </Card>
 
-          <Card className="border-0 shadow-xl hover:shadow-lg transition-shadow duration-300 text-center">
-            <CardHeader>
-              <div className="mx-auto flex h-12 w-12 items-center justify-center">
-                <Zap className="h-6 w-6 text-[#27A2D8]" />
-              </div>
-              <CardTitle className="mt-4">Internal Tools</CardTitle>
-              <CardDescription>
-                Custom business applications and dashboards
-              </CardDescription>
-            </CardHeader>
-          </Card>
+  <Card className="border-0 shadow-md hover:shadow-lg transition-shadow duration-300 text-center">
+    <CardHeader className="px-4 pt-1 pb-1">
+      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
+        <Globe className="h-6 w-6 text-[#27A2D8]" />
+      </div>
+      <CardTitle className="mt-1 font-bold text-base">Responsive Design</CardTitle>
+      <CardDescription className="mt-1 text-sm text-gray-700">
+        Mobile-first applications that work on all devices
+      </CardDescription>
+    </CardHeader>
+  </Card>
 
-          <Card className="border-0 shadow-xl hover:shadow-lg transition-shadow duration-300 text-center">
-            <CardHeader>
-              <div className="mx-auto flex h-12 w-12 items-center justify-center">
-                <Globe className="h-6 w-6 text-[#27A2D8]" />
-              </div>
-              <CardTitle className="mt-4">Responsive Design</CardTitle>
-              <CardDescription>
-                Mobile-first applications that work on all devices
-              </CardDescription>
-            </CardHeader>
-          </Card>
+  <Card className="border-0 shadow-md hover:shadow-lg transition-shadow duration-300 text-center">
+    <CardHeader className="px-4 pt-1 pb-1">
+      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
+        <Settings className="h-6 w-6 text-[#27A2D8]" />
+      </div>
+      <CardTitle className="mt-1 font-bold text-base">
+        API Design & System Integration
+      </CardTitle>
+      <CardDescription className="mt-1 text-sm text-gray-700">
+        Custom modules to extend your ERP functionality
+      </CardDescription>
+    </CardHeader>
+  </Card>
+</div>
 
-          <Card className="border-0 shadow-xl hover:shadow-lg transition-shadow duration-300 text-center">
-            <CardHeader>
-              <div className="mx-auto flex h-12 w-12 items-center justify-center">
-                <Settings className="h-6 w-6 text-[#27A2D8]" />
-              </div>
-              <CardTitle className="mt-4">API Design & System Integration</CardTitle>
-              <CardDescription>
-                Custom modules to extend your ERP functionality
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </div>
       </section>
       <section
         className="relative py-10 text-white"
