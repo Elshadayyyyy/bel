@@ -48,7 +48,6 @@ const About = () => {
 
                 {/* Section 2: Our Story */}
                 <section className="py-8 bg-white">
-                    {/* 🌟 APPLIED CONSISTENT CONTAINER CLASS (already correct in original) */}
                     <div className={contentContainerClasses}>
                         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
                             <div className="order-1 md:order-1">
@@ -79,7 +78,6 @@ const About = () => {
 
                 {/* Section 3: Mission & Vision */}
                 <section className="bg-gray-50 py-10">
-                    {/* 🌟 APPLIED CONSISTENT CONTAINER CLASS (replaces 'container mx-auto px-4 md:px-8 lg:px-12') */}
                     <div className={contentContainerClasses}>
                         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
                             <div className="rounded-lg bg-white p-8 shadow-md">
@@ -112,7 +110,6 @@ const About = () => {
 
                 {/* Section 4: Core Values */}
                 <section className="my-10">
-                    {/* 🌟 APPLIED CONSISTENT CONTAINER CLASS (replaces 'container mx-auto my-10 px-4 md:px-8 lg:px-12') */}
                     <div className={contentContainerClasses}>
                         <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl">Core Values</h2>
                         <p className="mb-12 text-center text-gray-900">
@@ -192,7 +189,6 @@ const About = () => {
                             opacity: 0.5,
                         }}
                     ></div>
-                    {/* 🌟 APPLIED CONSISTENT CONTAINER CLASS (already correct in original) */}
                     <div className={`relative z-10 text-center ${contentContainerClasses}`}>
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
                             Ready to Transform Your Business?
