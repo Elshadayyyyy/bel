@@ -27,14 +27,14 @@ import mPower from "./../assets/clientLogo/mPower.png";
 import fewis from "./../assets/clientLogo/fewis.png";
 import osiri from "./../assets/clientLogo/osiri.png";
 import above_the_footer from "./../assets/above_the_footer.png";
-import beltechImpact from "./../assets/homepage/beltechImpact.png";
+import beltechImpact from "./../assets/homepage/BeltechImapctNew.png";
 
 const Homepage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-[#F0F5F9]">
       <main className="flex-grow">
         {/* hero section */}
-      <section 
+       <section
   className="relative text-white flex items-center justify-center"
   style={{
     backgroundImage: `url(${hero})`,
@@ -44,10 +44,11 @@ const Homepage: React.FC = () => {
   }}
 >
   <div className="absolute inset-0"></div>
-  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center pt-32">
-    <div className="flex flex-col items-center text-center">
 
-    
+  {/* Main content centered vertically */}
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center pt-32">
+    <div className="flex flex-col items-center text-center w-full">
+      {/* DIGITAL TRANSFORMATION EXPERTS slightly left */}
       <div className="mb-6 relative w-full max-w-3xl mx-auto text-left">
         <div className="absolute -left-20 top-1/2 transform -translate-y-1/2 hidden md:block">
           <div className="h-0.5 w-16 bg-[#27A2D8]"></div>
@@ -56,13 +57,13 @@ const Homepage: React.FC = () => {
           DIGITAL TRANSFORMATION EXPERTS
         </span>
       </div>
+
       <h1 className="text-4xl md:text-6xl font-light mb-6 leading-tight">
         Streamline. Automate. Scale.
       </h1>
 
       <p className="text-lg md:text-xl text-white max-w-3xl mx-auto mb-0">
-        Empowering African businesses with tailored ERP, automation, and
-        digital transformation solutions.
+        Transforming African businesses with ERP, automation, and smart software solutions.
       </p>
 
       <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
@@ -79,7 +80,6 @@ const Homepage: React.FC = () => {
             size="lg"
             variant="outline"
             className="border-white text-white px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-transparent"
-            onClick={() => (window.location.href = "/Contact")}
           >
             See Live Demo
           </Button>
@@ -95,118 +95,130 @@ const Homepage: React.FC = () => {
         </Button>
       </div>
     </div>
+  </div>
 
-    <div className="mt-16 text-center flex flex-col items-center">
-      <span className="text-sm text-white mb-2">Discover Our Solutions</span>
-      <button
-        className="p-0 bg-transparent hover:bg-transparent transition-colors duration-200"
-        onClick={() => {
-          const solutionsSection =
-            document.getElementById("solutions-section");
-          if (solutionsSection) {
-            solutionsSection.scrollIntoView({ behavior: "smooth" });
-          }
-        }}
-      >
-        <ArrowDown className="w-8 h-8 text-[#27A2D8]" />
-      </button>
-    </div>
+  {/* Discover Our Solutions always at the bottom */}
+  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center flex flex-col items-center">
+    <span className="text-sm text-white mb-2">Discover Our Solutions</span>
+    <button
+      className="p-0 bg-transparent hover:bg-transparent transition-colors duration-200"
+      onClick={() => {
+        const solutionsSection = document.getElementById("solutions-section");
+        if (solutionsSection) {
+          solutionsSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }}
+    >
+      <ArrowDown className="w-8 h-8 text-[#27A2D8]" />
+    </button>
   </div>
 </section>
 
         {/* our soluton section*/}
-       <section id="solutions-section" className="py-10 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16">
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-        Our Solutions
-      </h2>
-      <p className="text-xl font-normal text-black max-w-3xl mx-auto">
-        We provide comprehensive digital transformation solutions that
-        help African businesses thrive in the modern economy.
-      </p>
-    </div>
+        <section id="solutions-section" className="py-10 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Section Header */}
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Our Solutions
+              </h2>
+              <p className="text-xl font-normal text-black max-w-3xl mx-auto">
+                We provide comprehensive digital transformation solutions that
+                help African businesses thrive in the modern economy.
+              </p>
+            </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {/* Card 1 */}
-      <div className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0">
-        <div className="w-full h-64 overflow-hidden">
-          <img
-            src={odooErp}
-            alt="Odoo ERP Implementation"
-            className="w-full h-full object-cover block"
-          />
-        </div>
-        <div className="p-6">
-          <h3 className="text-xl font-bold text-black mb-3">
-            Odoo ERP Implementation
-          </h3>
-          <p className="text-base font-normal text-black mb-6">
-            Complete ERP solutions tailored for African businesses with full implementation support and training.
-          </p>
-          <a
-            onClick={() => (window.location.href = "/Services")}
-            className="text-[#27A2D8] font-medium flex items-center space-x-2 hover:underline cursor-pointer"
-          >
-            <span>Learn More</span>
-          </a>
-        </div>
-      </div>
+            {/* Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Card 1 */}
+              <div className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0">
+                <div className="w-full h-64 overflow-hidden">
+                  <img
+                    src={odooErp}
+                    alt="Odoo ERP Implementation"
+                    className="w-full h-full object-cover object-top block"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-black mb-3">
+                    Odoo ERP Implementation
+                  </h3>
+                  <p className="text-base font-normal text-black mb-6">
+                    A tailored Odoo ERP system to
+                    streamline your entire workflow and
+                    gain real-time insights.
 
-      {/* Card 2 */}
-      <div className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0">
-        <div className="w-full h-64 overflow-hidden">
-          <img
-            src={bussiness_automation_int}
-            alt="Business Automation & Integration"
-            className="w-full h-full object-cover block"
-          />
-        </div>
-        <div className="p-6">
-          <h3 className="text-xl font-bold text-black mb-3">
-            Business Automation & Integration
-          </h3>
-          <p className="text-base font-normal text-black mb-4">
-            Complete ERP solutions tailored for African businesses with full implementation support and training.
-          </p>
-          <a
-            onClick={() => (window.location.href = "/Services")}
-            className="text-[#27A2D8] font-medium flex items-center space-x-2 hover:underline cursor-pointer"
-          >
-            <span>Learn More</span>
-          </a>
-        </div>
-      </div>
+                  </p>
+                  <a
+                    onClick={() => (window.location.href = "/Services")}
+                    className="text-[#27A2D8] font-bold flex items-center space-x-2 hover:underline cursor-pointer"
+                  >
+                    <span>Learn More</span>
+                  </a>
+                </div>
+              </div>
 
-      {/* Card 3 */}
-      <div className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0">
-        <div className="w-full h-64 overflow-hidden">
-          <img
-            src={custom_soft_dev}
-            alt="Custom Software Development"
-            className="w-full h-full object-cover block"
-          />
-        </div>
-        <div className="p-6">
-          <h3 className="text-xl font-bold text-black mb-3">
-            Custom Software Development
-          </h3>
-          <p className="text-base font-normal text-black mb-4">
-            Complete ERP solutions tailored for African businesses with full implementation support and training.
-          </p>
-          <a
-            onClick={() => (window.location.href = "/Services")}
-            className="text-[#27A2D8] font-medium flex items-center space-x-2 hover:underline cursor-pointer"
-          >
-            <span>Learn More</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+              {/* Card 2 */}
+              <div className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0">
+                <div className="w-full h-64 overflow-hidden">
+                  <img
+                    src={bussiness_automation_int}
+                    alt="Business Automation & Integration"
+                    className="w-full h-full object-cover object-top block"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-black mb-3">
+                    Business Automation & Integration
+                  </h3>
+                  <p className="text-base font-normal text-black mb-4">
+                    Automation workflows that reduce
+                    errors, cut down on costs, and free your
+                    team’s time.
 
-       {/* why oddo part */}
+                  </p>
+                  <a
+                    onClick={() => (window.location.href = "/Services")}
+                    className="text-[#27A2D8] font-bold flex items-center space-x-2 hover:underline cursor-pointer"
+                  >
+                    <span>Learn More</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Card 3 */}
+              <div className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0">
+                <div className="w-full h-64 overflow-hidden">
+                  <img
+                    src={custom_soft_dev}
+                    alt="Custom Software Development"
+                    className="w-full h-full object-cover object-top block"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-black mb-3">
+                    Custom Software Development
+                  </h3>
+                  <p className="text-base font-normal text-black mb-4">
+                    Web and mobile applications designed
+                    to enhance your operations and solve
+                    specific challenges.
+
+                  </p>
+                  <a
+                    onClick={() => (window.location.href = "/Services")}
+                    className="text-[#27A2D8] font-bold flex items-center space-x-2 hover:underline cursor-pointer"
+                  >
+                    <span>Learn More</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        {/* why oddo part */}
         <section className="py-10 bg-[#f7f8fa]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -242,7 +254,9 @@ const Homepage: React.FC = () => {
                       User-Friendly Interface
                     </h3>
                     <p className="text-base font-normal text-gray-700">
-                      Intuitive design that requires minimal training for your team.
+                      Empower your team with an intuitive interface that is
+                      easy to navigate.
+
                     </p>
                   </div>
                 </div>
@@ -266,7 +280,9 @@ const Homepage: React.FC = () => {
                       Scalable Growth
                     </h3>
                     <p className="text-base font-normal text-gray-700">
-                      From startups to enterprises, Odoo scales with your business needs.
+                      Handle more tasks with the same or fewer human resources
+as your business grows. 
+
                     </p>
                   </div>
                 </div>
@@ -283,85 +299,85 @@ const Homepage: React.FC = () => {
             </div>
           </div>
         </section>
-       
-       {/* beltech impact section*/}<section className="py-10 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16">
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">BelTech Impact</h2>
-      <p className="text-xl font-normal text-black max-w-3xl mx-auto">
-        We combine technical expertise with deep understanding of African business needs to deliver exceptional results.
-      </p>
-    </div>
 
-    <div className="flex flex-col lg:flex-row gap-12 items-stretch">
-      <div className="lg:flex-1 flex items-stretch">
-        <img src={beltechImpact} alt="BelTech Impact" className="rounded-3xl w-full h-full object-cover" />
-      </div>
+        {/* beltech impact section*/}<section className="py-10 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">BelTech Impact</h2>
+              <p className="text-xl font-normal text-black max-w-3xl mx-auto">
+                We combine technical expertise with deep understanding of African business needs to deliver exceptional results.
+              </p>
+            </div>
 
-      <div className="lg:flex-1 flex flex-col space-y-6 h-full">
-        <div
-          className="bg-white p-6 rounded-3xl flex items-start space-x-4 flex-1 border-l-4 border-[#27A2D8] transform transition-transform duration-300 hover:-translate-y-0.5"
-          style={{ boxShadow: '4px 4px 10px rgba(0,0,0,0.1)' }}
-        >
-          <div className="flex-shrink-0 h-12 w-12 bg-[#27A2D8] flex items-center justify-center rounded-sm">
-            <Award className="w-6 h-6 text-white" />
-          </div>
-          <div>
-            <h3 className="text-xl font-bold text-black mb-2">Odoo-certified ERP experts</h3>
-            <p className="text-base font-normal text-black">
-              Our team holds official Odoo certifications and deep expertise in ERP implementation.
-            </p>
-          </div>
-        </div>
+            <div className="flex flex-col lg:flex-row gap-12 items-stretch">
+              <div className="lg:flex-1 flex items-stretch">
+                <img src={beltechImpact} alt="BelTech Impact" className="rounded-3xl w-full h-full object-cover" />
+              </div>
 
-        <div
-          className="bg-white p-6 rounded-3xl flex items-start space-x-4 flex-1 border-l-4 border-[#27A2D8] transform transition-transform duration-300 hover:-translate-y-0.5"
-          style={{ boxShadow: '4px 4px 10px rgba(0,0,0,0.1)' }}
-        >
-          <div className="flex-shrink-0 h-12 w-12 bg-[#27A2D8] flex items-center justify-center rounded-sm">
-            <Globe className="w-6 h-6 text-white" />
-          </div>
-          <div>
-            <h3 className="text-xl font-bold text-black mb-2">Real-world African business focus</h3>
-            <p className="text-base font-normal text-black">
-              We understand the unique challenges and opportunities of African markets.
-            </p>
-          </div>
-        </div>
+              <div className="lg:flex-1 flex flex-col space-y-6 h-full">
+                <div
+                  className="bg-white p-6 rounded-3xl flex items-start space-x-4 flex-1 border-l-4 border-[#27A2D8] transform transition-transform duration-300 hover:-translate-y-0.5"
+                  style={{ boxShadow: '4px 4px 10px rgba(0,0,0,0.1)' }}
+                >
+                  <div className="flex-shrink-0 h-12 w-12 bg-[#27A2D8] flex items-center justify-center rounded-sm">
+                    <Award className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-black mb-2">Odoo-certified ERP experts</h3>
+                    <p className="text-base font-normal text-black">
+                      Our team holds official Odoo certifications and deep expertise in ERP implementation.
+                    </p>
+                  </div>
+                </div>
 
-        <div
-          className="bg-white p-6 rounded-3xl flex items-start space-x-4 flex-1 border-l-4 border-[#27A2D8] transform transition-transform duration-300 hover:-translate-y-0.5"
-          style={{ boxShadow: '4px 4px 10px rgba(0,0,0,0.1)' }}
-        >
-          <div className="flex-shrink-0 h-12 w-12 bg-[#27A2D8] flex items-center justify-center rounded-sm">
-            <Zap className="w-6 h-6 text-white" />
-          </div>
-          <div>
-            <h3 className="text-xl font-bold text-black mb-2">Open-source innovation at your service</h3>
-            <p className="text-base font-normal text-black">
-              Leveraging the power of open-source technology for maximum flexibility and value.
-            </p>
-          </div>
-        </div>
+                <div
+                  className="bg-white p-6 rounded-3xl flex items-start space-x-4 flex-1 border-l-4 border-[#27A2D8] transform transition-transform duration-300 hover:-translate-y-0.5"
+                  style={{ boxShadow: '4px 4px 10px rgba(0,0,0,0.1)' }}
+                >
+                  <div className="flex-shrink-0 h-12 w-12 bg-[#27A2D8] flex items-center justify-center rounded-sm">
+                    <Globe className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-black mb-2">Real-world African business focus</h3>
+                    <p className="text-base font-normal text-black">
+                      We understand the unique challenges and opportunities of African markets.
+                    </p>
+                  </div>
+                </div>
 
-        <div
-          className="bg-white p-6 rounded-3xl flex items-start space-x-4 flex-1 border-l-4 border-[#27A2D8] transform transition-transform duration-300 hover:-translate-y-0.5"
-          style={{ boxShadow: '4px 4px 10px rgba(0,0,0,0.1)' }}
-        >
-          <div className="flex-shrink-0 h-12 w-12 bg-[#27A2D8] flex items-center justify-center rounded-sm">
-            <DollarSign className="w-6 h-6 text-white" />
+                <div
+                  className="bg-white p-6 rounded-3xl flex items-start space-x-4 flex-1 border-l-4 border-[#27A2D8] transform transition-transform duration-300 hover:-translate-y-0.5"
+                  style={{ boxShadow: '4px 4px 10px rgba(0,0,0,0.1)' }}
+                >
+                  <div className="flex-shrink-0 h-12 w-12 bg-[#27A2D8] flex items-center justify-center rounded-sm">
+                    <Zap className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-black mb-2">Open-source innovation at your service</h3>
+                    <p className="text-base font-normal text-black">
+                      Leveraging the power of open-source technology for maximum flexibility and value.
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  className="bg-white p-6 rounded-3xl flex items-start space-x-4 flex-1 border-l-4 border-[#27A2D8] transform transition-transform duration-300 hover:-translate-y-0.5"
+                  style={{ boxShadow: '4px 4px 10px rgba(0,0,0,0.1)' }}
+                >
+                  <div className="flex-shrink-0 h-12 w-12 bg-[#27A2D8] flex items-center justify-center rounded-sm">
+                    <DollarSign className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-black mb-2">Agile, scalable, and cost-effective</h3>
+                    <p className="text-base font-normal text-black">
+                      Solutions that grow with your business while maintaining cost efficiency.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <h3 className="text-xl font-bold text-black mb-2">Agile, scalable, and cost-effective</h3>
-            <p className="text-base font-normal text-black">
-              Solutions that grow with your business while maintaining cost efficiency.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        </section>
 
         <section className="py-10 bg-[#f7f8fa]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -386,7 +402,7 @@ const Homepage: React.FC = () => {
                     Mobile App Development
                   </h3>
                   <p className="text-base font-normal text-black">
-                    Native and cross-platform mobile applications for iOS and Android
+                    Native and cross-platform mobile applications for iOS and Android.
                   </p>
                   <ul className="mt-2 list-disc list-inside text-base font-normal text-black">
                     <li>iOS Development</li>
@@ -405,7 +421,7 @@ const Homepage: React.FC = () => {
                     Web Development
                   </h3>
                   <p className="text-base font-normal text-black">
-                    Modern, responsive websites and web applications with cutting-edge technology
+                    Modern, responsive websites and web applications with cutting-edge technology.
                   </p>
                   <ul className="mt-2 list-disc list-inside text-base font-normal text-black">
                     <li>Responsive Design</li>
@@ -442,7 +458,7 @@ const Homepage: React.FC = () => {
                     Security Solutions
                   </h3>
                   <p className="text-base font-normal text-black">
-                    Robust security implementation and compliance-ready applications
+                    Robust security implementation and compliance-ready applications.
                   </p>
                   <ul className="mt-2 list-disc list-inside text-base font-normal text-black">
                     <li>Data Protection</li>
@@ -474,81 +490,81 @@ const Homepage: React.FC = () => {
           </div>
         </section>
         {/* testimonial section */} <section className="py-10 bg-white relative overflow-hidden">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16">
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-        Our Happy Clients
-      </h2>
-      <p className="text-xl font-normal text-black max-w-3xl mx-auto">
-        See what our clients say about their digital transformation journey with BelTech Solutions.
-      </p>
-    </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Our Happy Clients
+              </h2>
+              <p className="text-xl font-normal text-black max-w-3xl mx-auto">
+                See what our clients say about their digital transformation journey with BelTech Solutions.
+              </p>
+            </div>
 
-    {/* Marquee wrapper */}
-    <div className="relative overflow-hidden">
-      <div className="flex gap-12 whitespace-nowrap animate-[marquee_30s_linear_infinite]">
-        {[
-          { name: "Emointel leaders corner", img: emointel, testimonial: "Emointel leaders corner loved our digital transformation solutions!" },
-          { name: "Frontline Estate Solution LLC", img: frontline, testimonial: "Frontline Estate Solution LLC experienced amazing growth with BelTech Solutions!" },
-          { name: "M Power Financing", img: mPower, testimonial: "M Power Financing praises our innovative approach!" },
-          { name: "Fewis Digital Medical Solutions", img: fewis, testimonial: "Fewis Digital Medical Solutions saw remarkable results!" },
-          { name: "Osiri University", img: osiri, testimonial: "Osiri University appreciated our efficiency!" },
-        ]
-      
-          .concat([
-            { name: "Emointel leaders corner", img: emointel, testimonial: "Emointel leaders corner loved our digital transformation solutions!" },
-            { name: "Frontline Estate Solution LLC", img: frontline, testimonial: "Frontline Estate Solution LLC experienced amazing growth with BelTech Solutions!" },
-            { name: "M Power Financing", img: mPower, testimonial: "M Power Financing praises our innovative approach!" },
-            { name: "Fewis Digital Medical Solutions", img: fewis, testimonial: "Fewis Digital Medical Solutions saw remarkable results!" },
-            { name: "Osiri University", img: osiri, testimonial: "Osiri University appreciated our efficiency!" },
-          ])
-          .map((client, idx) => {
-            let height = "h-40"; 
-            let width = "w-40";
-            if (idx % 5 === 2) width = "w-98";
+            {/* Marquee wrapper */}
+            <div className="relative overflow-hidden">
+              <div className="flex gap-12 whitespace-nowrap animate-[marquee_30s_linear_infinite]">
+                {[
+                  { name: "Emointel leaders corner", img: emointel, testimonial: "Emointel leaders corner loved our digital transformation solutions!" },
+                  { name: "Frontline Estate Solution LLC", img: frontline, testimonial: "Frontline Estate Solution LLC experienced amazing growth with BelTech Solutions!" },
+                  { name: "M Power Financing", img: mPower, testimonial: "M Power Financing praises our innovative approach!" },
+                  { name: "Fewis Digital Medical Solutions", img: fewis, testimonial: "Fewis Digital Medical Solutions saw remarkable results!" },
+                  { name: "Osiri University", img: osiri, testimonial: "Osiri University appreciated our efficiency!" },
+                ]
 
-            return (
-              <div key={idx} className="relative flex flex-col items-center group flex-shrink-0">
-            
-                <div
-                  className={`flex items-center justify-center transition-transform duration-200 group-hover:scale-110 z-10 ${width} ${height}`}
-                >
-                  <img
-                    src={client.img}
-                    alt={client.name}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
+                  .concat([
+                    { name: "Emointel leaders corner", img: emointel, testimonial: "Emointel leaders corner loved our digital transformation solutions!" },
+                    { name: "Frontline Estate Solution LLC", img: frontline, testimonial: "Frontline Estate Solution LLC experienced amazing growth with BelTech Solutions!" },
+                    { name: "M Power Financing", img: mPower, testimonial: "M Power Financing praises our innovative approach!" },
+                    { name: "Fewis Digital Medical Solutions", img: fewis, testimonial: "Fewis Digital Medical Solutions saw remarkable results!" },
+                    { name: "Osiri University", img: osiri, testimonial: "Osiri University appreciated our efficiency!" },
+                  ])
+                  .map((client, idx) => {
+                    let height = "h-40";
+                    let width = "w-40";
+                    if (idx % 5 === 2) width = "w-98";
 
-                {/* Testimonial */}
-                <div
-                  className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full 
+                    return (
+                      <div key={idx} className="relative flex flex-col items-center group flex-shrink-0">
+
+                        <div
+                          className={`flex items-center justify-center transition-transform duration-200 group-hover:scale-110 z-10 ${width} ${height}`}
+                        >
+                          <img
+                            src={client.img}
+                            alt={client.name}
+                            className="h-full w-full object-contain"
+                          />
+                        </div>
+
+                        {/* Testimonial */}
+                        <div
+                          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full 
                              opacity-0 group-hover:opacity-100 group-hover:translate-y-2 
                              transition-all duration-300 
                              w-64 max-w-xs bg-white shadow-lg rounded-lg 
                              p-4 text-center z-50 pointer-events-none"
-                >
-                  <p className="text-base font-normal text-black whitespace-normal break-words line-clamp-2">
-                    "{client.testimonial}"
-                  </p>
-                </div>
+                        >
+                          <p className="text-base font-normal text-black whitespace-normal break-words line-clamp-2">
+                            "{client.testimonial}"
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
               </div>
-            );
-          })}
-      </div>
-    </div>
-  </div>
+            </div>
+          </div>
 
-  {/* Marquee animation */}
-  <style>
-    {`
+          {/* Marquee animation */}
+          <style>
+            {`
       @keyframes marquee {
         0% { transform: translateX(0%); }
         100% { transform: translateX(-50%); }
       }
     `}
-  </style>
-</section>
+          </style>
+        </section>
 
 
         <section

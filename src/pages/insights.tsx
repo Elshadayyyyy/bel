@@ -20,14 +20,14 @@ const ArticleCard = ({ imageSrc, date, title, description }: ArticleCardProps) =
   return (
     <Card className="border border-gray-200 flex flex-col rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
       <img className="w-full aspect-video rounded-t-lg object-cover" src={imageSrc} alt={title} />
-      <CardHeader className="px-6 pt-5 pb-3">
+      <CardHeader className="px-6 pt-2 pb-1">
         <p className="text-sm text-gray-500 font-medium">{date}</p>
         <CardTitle className="text-xl font-bold leading-snug">{title}</CardTitle>
       </CardHeader>
-      <CardContent className="px-6 pb-2">
+      <CardContent className="px-6 pb-1">
         <CardDescription className="text-gray-700 text-base leading-relaxed">{description}</CardDescription>
       </CardContent>
-      <CardFooter className="px-6 pb-4">
+      <CardFooter className="px-6 pb-1">
         <a href="#" className="inline-flex items-center text-[#27A2D8] font-medium hover:underline hover:translate-x-1 transition-transform duration-200">
           <span>Read More</span>
         </a>
@@ -59,7 +59,7 @@ const Insight = () => {
               Insights
             </h1>
             <p className="mt-4 text-lg md:text-xl max-w-2xl">
-              Explore our latest articles, guides, and thought leadership on digital transformation and technology in Africa.
+             Explore our latest articles and guides on digital transformation and technology in Africa. 
             </p>
           </div>
         </div>

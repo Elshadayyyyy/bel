@@ -34,24 +34,24 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow-md fixed top-0 w-full z-50">
-      {/* Reduced horizontal padding from px-4 lg:px-8 → px-2 lg:px-6 */}
-      <div className="w-full px-1 lg:px-2">
-        <div className="flex items-center justify-between h-16">
-          {/* Reduced logo left margin/padding */}
+      <div className="w-full px-4 lg:px-8">
+        <div className="flex items-center justify-between h-20 min-h-[80px]">
+          {/* Logo */}
           <Link to="/" className="flex items-center">
             <img
               src={logo}
               alt="BelTech Logo"
-              className="h-17 w-auto object-contain"
+              className="h-16 w-auto object-contain" // fixed logo height
             />
           </Link>
 
+          {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-sm font-medium transition-colors duration-200 ${
+                className={`text-md font-medium transition-colors duration-200 ${
                   isActiveLink(link.path)
                     ? "text-[#27A2D8] border-b-2 border-[#27A2D8]"
                     : "text-gray-700 hover:text-[#27A2D8]"
@@ -61,15 +61,15 @@ const Navbar = () => {
               </Link>
             ))}
 
-            {/* Reduced Get Demo button left margin from ml-4 → ml-2 */}
             <Button
               className="ml-2 text-white px-5 py-2 text-sm font-medium transition-all duration-200 hover:scale-105 bg-[#27A2D8]"
-              onClick={() => (window.location.href = "/services")}
+              onClick={() => (window.location.href = "/contact")}
             >
               Get Demo
             </Button>
           </div>
 
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -81,6 +81,7 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden border-t bg-white">
           <div className="px-4 py-3 space-y-2">
@@ -102,7 +103,7 @@ const Navbar = () => {
               className="w-full mt-2 text-white bg-[#27A2D8] hover:bg-[#4FB3C1]"
               onClick={() => {
                 setIsMenuOpen(false);
-                window.location.href = "/services";
+                window.location.href = "/contact";
               }}
             >
               Get Demo
