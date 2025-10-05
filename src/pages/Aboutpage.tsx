@@ -14,34 +14,37 @@ const About = () => {
         <div className="min-h-screen bg-white font-sans text-gray-800 antialiased">
             <main>
                 {/* Section 1: Hero Section */}
-                <section className="relative w-full h-screen overflow-hidden">
-                    <div
-                        className="absolute inset-0 w-full h-full bg-center bg-no-repeat bg-cover"
-                        style={{ backgroundImage: `url(${abouthero})` }}
-                    ></div>
+              <section className="relative w-full h-screen overflow-hidden">
+  {/* Background Image */}
+  <div
+    className="absolute inset-0 w-full h-full bg-center bg-no-repeat bg-cover"
+    style={{ backgroundImage: `url(${abouthero})` }}
+  ></div>
 
-                    <div
-                        className="absolute inset-0"
-                        style={{
-                            background: `
-                                linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)),
-                                linear-gradient(to left, rgba(39,162,216,0.5) 0%, rgba(39,162,216,0.0) 40%)
-                            `,
-                        }}
-                    ></div>
+  {/* Gradient Overlay */}
+  <div
+    className="absolute inset-0"
+    style={{
+      background: `
+        linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)),
+        linear-gradient(to left, rgba(39,162,216,0.5) 0%, rgba(39,162,216,0.0) 40%)
+      `,
+    }}
+  ></div>
 
-                    <div className="absolute inset-0 flex items-center">
-                        {/* 🌟 APPLIED CONSISTENT CONTAINER CLASS */}
-                        <div className={`w-full text-white ${contentContainerClasses}`}>
-                            <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">
-                                About Us
-                            </h1>
-                            <p className="mt-4 text-lg md:text-xl max-w-2xl">
-                                A company born in Ethiopia, supporting businesses across Africa with digital transformation solutions.
-                            </p>
-                        </div>
-                    </div>
-                </section>
+  {/* Content */}
+  <div className="absolute inset-0 flex items-center">
+    <div className="w-full px-4 lg:px-8 text-white">
+      <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">
+        About Us
+      </h1>
+      <p className="mt-4 text-lg md:text-xl max-w-2xl">
+        A company born in Ethiopia, supporting businesses across Africa with digital transformation solutions.
+      </p>
+    </div>
+  </div>
+</section>
+
 
                 {/* Section 2: Our Story */}
                 <section className="py-8 bg-white">
