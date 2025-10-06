@@ -29,6 +29,10 @@ const SolutionsPage = () => {
             <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">
               Solution in Action
             </h1>
+             <p className="mt-4 text-lg md:text-xl max-w-2xl">
+              Real projects. Real impact. Discover how we help businesses work smarter.
+
+            </p>
           </div>
         </div>
         <div className="absolute bottom-0 w-full h-1 bg-white"></div>
@@ -59,7 +63,7 @@ const SolutionsPage = () => {
     </div>
     <div className="px-6 pb-6">
       <p className="text-base font-normal text-gray-700 leading-relaxed">
-        Deployed a full-scale Odoo ERP to manage production, sales, inventory, and logistics for an East African textile plant.
+        Deployed a full-scale Odoo ERP to manage production, sales, inventory, and logistics for an African textile plant.
       </p>
       <Link
         to="/ERPDetail"

@@ -5,7 +5,7 @@ import { Textarea } from "../components/ui/textarea";
 import toast, { Toaster } from "react-hot-toast";
 import contactHero from "./../assets/contactHero.png";
 import above_the_footer from "./../assets/above_the_footer.png";
-import { Dot } from 'lucide-react';
+import { Dot } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,7 +14,7 @@ const Contact = () => {
     email: "",
     phone: "",
     organization: "",
-    message: ""
+    message: "",
   });
 
   const [errors, setErrors] = useState<any>({});
@@ -51,7 +51,7 @@ const Contact = () => {
         email: "",
         phone: "",
         organization: "",
-        message: ""
+        message: "",
       });
     }
   };
@@ -70,33 +70,27 @@ const Contact = () => {
           className="absolute inset-0"
           style={{
             background: `
-        linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)),
-        linear-gradient(to left, rgba(39,162,216,0.5) 0%, rgba(39,162,216,0.0) 40%)
-      `,
+              linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)),
+              linear-gradient(to left, rgba(39,162,216,0.5) 0%, rgba(39,162,216,0.0) 40%)
+            `,
           }}
         ></div>
         <div className="absolute inset-0 flex items-center">
           <div className="w-full px-4 lg:px-8 text-white">
-            <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">
-              Contact Us
-            </h1>
+            <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">Contact Us</h1>
             <p className="mt-4 text-lg md:text-xl max-w-2xl">
-              Want to discuss a project or ask questions? 
-              <br />
-              Reach out
-              <br />
-             Let us transform your business with smart software and a tailored ERP.
+              Want to discuss a project or ask questions? <br />
+              Let us transform your business with smart software and a tailored ERP.
             </p>
           </div>
         </div>
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16 px-4 sm:px-8 lg:px-16">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-
+      <section className="py-16 px-4 sm:px-8 lg:px-16 flex justify-center">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start max-w-6xl">
           {/* Left Info */}
-          <div>
+          <div className="flex flex-col justify-center">
             <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Let's talk</h2>
             <div className="space-y-6">
               {/* Location */}
@@ -107,7 +101,7 @@ const Contact = () => {
                 </svg>
                 <div className="flex items-center gap-0.4">
                   <Dot className="h-8 w-8 text-black" />
-                  <p className="font-semibold">Bole Sub City, Addis Ababa, Ethiopia, East Africa</p>
+                  <p className="font-semibold">Addis Ababa, Ethiopia, East Africa</p>
                 </div>
               </div>
 
@@ -119,11 +113,11 @@ const Contact = () => {
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center gap-0.4">
                     <Dot className="h-8 w-8 text-black" />
-                    <p className="font-semibold">+251 911 123 456</p>
+                    <p className="font-semibold">+251 955 935 455</p>
                   </div>
                   <div className="flex items-center gap-0.4">
                     <Dot className="h-8 w-8 text-black" />
-                    <p className="font-semibold">+251 911 789 012</p>
+                    <p className="font-semibold">+251 932 058 398</p>
                   </div>
                 </div>
               </div>
@@ -138,10 +132,6 @@ const Contact = () => {
                     <Dot className="h-8 w-8 text-black" />
                     <p className="font-semibold">beltechsolns@gmail.com</p>
                   </div>
-                  <div className="flex items-center gap-0.4">
-                    <Dot className="h-8 w-8 text-black" />
-                    <p className="font-semibold">support@beltechsolutions.com</p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -149,7 +139,7 @@ const Contact = () => {
 
           {/* Right side: FORM */}
           <div className="w-full flex justify-center">
-            <form className="w-full max-w-2xl space-y-6" onSubmit={handleSubmit}>
+            <form className="w-full max-w-md space-y-6" onSubmit={handleSubmit}>
               {/* Paragraph above inputs */}
               <p className="text-gray-600 mb-6">
                 Questions, comments, or suggestions? Simply fill in the form and we'll be in touch shortly.
@@ -163,19 +153,16 @@ const Contact = () => {
                   onChange={handleChange}
                   type="text"
                   placeholder="First Name*"
-                  className={`py-3 px-4 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 ${errors.firstName ? "border-red-500" : ""}`}
+                  className={`w-full py-3 px-4 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 ${errors.firstName ? "border-red-500" : ""}`}
                 />
-                {errors.firstName && <p className="text-red-500 text-sm">{errors.firstName}</p>}
-
                 <Input
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleChange}
                   type="text"
                   placeholder="Last Name*"
-                  className={`py-3 px-4 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 ${errors.lastName ? "border-red-500" : ""}`}
+                  className={`w-full py-3 px-4 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 ${errors.lastName ? "border-red-500" : ""}`}
                 />
-                {errors.lastName && <p className="text-red-500 text-sm">{errors.lastName}</p>}
               </div>
 
               <Input
@@ -184,9 +171,8 @@ const Contact = () => {
                 onChange={handleChange}
                 type="email"
                 placeholder="Email*"
-                className={`w-full py-3 px-4 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#61C7D5]/50 ${errors.email ? "border-red-500" : ""}`}
+                className={`w-full py-3 px-4 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 ${errors.email ? "border-red-500" : ""}`}
               />
-              {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
 
               <Input
                 name="phone"
@@ -196,7 +182,6 @@ const Contact = () => {
                 placeholder="Phone Number*"
                 className={`w-full py-3 px-4 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 ${errors.phone ? "border-red-500" : ""}`}
               />
-              {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
 
               <Input
                 name="organization"
@@ -206,7 +191,6 @@ const Contact = () => {
                 placeholder="Organization*"
                 className={`w-full py-3 px-4 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 ${errors.organization ? "border-red-500" : ""}`}
               />
-              {errors.organization && <p className="text-red-500 text-sm">{errors.organization}</p>}
 
               <Textarea
                 name="message"
@@ -215,14 +199,12 @@ const Contact = () => {
                 placeholder="Your message..."
                 className={`w-full py-3 px-4 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 min-h-[150px] ${errors.message ? "border-red-500" : ""}`}
               />
-              {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
 
               <Button type="submit" className="w-full bg-[#27A2D8] text-white py-3 px-6 rounded-lg font-bold hover:bg-[#50b5c0] transition-colors">
                 Send Message
               </Button>
             </form>
           </div>
-
         </div>
       </section>
 
@@ -237,9 +219,7 @@ const Contact = () => {
       >
         <div
           className="absolute inset-0 z-0"
-          style={{
-            backgroundColor: "rgba(0, 0, 0, 0.6)", 
-          }}
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
         ></div>
         <div
           className="absolute inset-0 z-0"
@@ -259,7 +239,7 @@ const Contact = () => {
             <Button
               size="lg"
               className="px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8] text-white"
-              onClick={() => window.location.href = 'solutions'}
+              onClick={() => (window.location.href = "solutions")}
             >
               View Success Stories
             </Button>

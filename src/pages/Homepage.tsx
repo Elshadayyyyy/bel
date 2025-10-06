@@ -33,39 +33,42 @@ const Homepage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-[#F0F5F9]">
       <main className="flex-grow">
-        {/* hero section */}
-       <section
+      {/* hero section */}
+<section
   className="relative text-white flex items-center justify-center"
   style={{
     backgroundImage: `url(${hero})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
+    backgroundRepeat: "no-repeat", // ensure no tiling
+    backgroundColor: "black", // fill gaps with pure black (so no gray shows)
     minHeight: "100vh",
   }}
 >
-  <div className="absolute inset-0"></div>
-
   {/* Main content centered vertically */}
-  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center pt-32">
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center pt-32 pb-24">
     <div className="flex flex-col items-center text-center w-full">
-      {/* DIGITAL TRANSFORMATION EXPERTS slightly left */}
-      <div className="mb-6 relative w-full max-w-3xl mx-auto text-left">
-        <div className="absolute -left-20 top-1/2 transform -translate-y-1/2 hidden md:block">
-          <div className="h-0.5 w-16 bg-[#27A2D8]"></div>
+      {/* DIGITAL TRANSFORMATION EXPERTS - slightly left but aligned */}
+      <div className="mb-6 relative w-full max-w-3xl mx-auto flex justify-center md:justify-start">
+        <div className="relative inline-flex items-center text-left -translate-x-6 md:-translate-x-25">
+          <div className="hidden md:block h-0.5 w-16 bg-[#27A2D8] mr-6"></div>
+          <span className="inline-block text-sm font-medium text-[#27A2D8]">
+            DIGITAL TRANSFORMATION EXPERTS
+          </span>
         </div>
-        <span className="inline-block text-sm font-medium text-[#27A2D8]">
-          DIGITAL TRANSFORMATION EXPERTS
-        </span>
       </div>
 
+      {/* Heading */}
       <h1 className="text-4xl md:text-6xl font-light mb-6 leading-tight">
         Streamline. Automate. Scale.
       </h1>
 
+      {/* Paragraph */}
       <p className="text-lg md:text-xl text-white max-w-3xl mx-auto mb-0">
         Transforming African businesses with ERP, automation, and smart software solutions.
       </p>
 
+      {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
         <Button
           size="lg"
@@ -98,7 +101,7 @@ const Homepage: React.FC = () => {
   </div>
 
   {/* Discover Our Solutions always at the bottom */}
-  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center flex flex-col items-center">
+  <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-center flex flex-col items-center pointer-events-auto">
     <span className="text-sm text-white mb-2">Discover Our Solutions</span>
     <button
       className="p-0 bg-transparent hover:bg-transparent transition-colors duration-200"
@@ -113,6 +116,8 @@ const Homepage: React.FC = () => {
     </button>
   </div>
 </section>
+
+
 
         {/* our soluton section*/}
         <section id="solutions-section" className="py-10 bg-white">
@@ -169,7 +174,7 @@ const Homepage: React.FC = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-black mb-3">
-                    Business Automation & Integration
+                  Automation & Integration
                   </h3>
                   <p className="text-base font-normal text-black mb-4">
                     Automation workflows that reduce
