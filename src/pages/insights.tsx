@@ -1,12 +1,12 @@
 import { Button } from "../components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/card";
 import Hero from "./../assets/insightpage/heroNew.png";
-import ERPdrivesROI from "./../assets/insightpage/ERPdrivesROI.png"
-import RealWorldWorkFow from "./../assets/insightpage/RealWorldWorkFow.png"
-import DigitalTransformation from "./../assets/insightpage/DigitalTransformation.png"
+import ERPdrivesROI from "./../assets/insightpage/ERPdrivesROINew.jpg"
+import RealWorldWorkFow from "./../assets/insightpage/RealWorldWorkFlowNew.jpg"
+import DigitalTransformation from "./../assets/insightpage/DigitalTransformationNew.jpg"
 import OvercomingERP from "./../assets/insightpage/OvercomingERP.png"
 import RoleOfData from "./../assets/insightpage/RoleOfData.png"
-import TrendsInAfrica from "./../assets/insightpage/TrendsInAfrica.png"
+import TrendsInAfrica from "./../assets/insightpage/TrendsInAfrica.jpg"
 import above_the_footer from "./../assets/above_the_footer.png"
 
 interface ArticleCardProps {
