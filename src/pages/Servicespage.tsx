@@ -2,7 +2,7 @@ import { Button } from '../components/ui/button';
 import { Card, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { CheckCircle, Zap, Users, Globe, Settings } from 'lucide-react';
 import Hero from "./../assets/servicepage/heroNew.png";
-import HeroMobile from "./../assets/servicepage/erpMobile.jpg";
+import HeroMobile from "./../assets/servicepage/heroMobile.png";
 import ERPImp from "./../assets/homepage/oddoNew.png";
 import customSoft from "./../assets/servicepage/customSoftware.png";
 import bussinesAuto from "./../assets/servicepage/businessAuto.png";
