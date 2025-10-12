@@ -2,6 +2,7 @@ import { Button } from '../components/ui/button';
 import { Card, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { CheckCircle, Zap, Users, Globe, Settings } from 'lucide-react';
 import Hero from "./../assets/servicepage/heroNew.png";
+import HeroMobile from "./../assets/servicepage/erpMobile.jpg";
 import ERPImp from "./../assets/homepage/oddoNew.png";
 import customSoft from "./../assets/servicepage/customSoftware.png";
 import bussinesAuto from "./../assets/servicepage/businessAuto.png";
@@ -10,39 +11,55 @@ import above_the_footer from "./../assets/above_the_footer.png";
 const Servicespage = () => {
   return (
     <div className="min-h-screen font-sans text-gray-800 antialiased">
-     <section className="relative w-full h-screen overflow-hidden">
-  <div
-    className="absolute inset-0 w-full h-full bg-center bg-no-repeat bg-cover"
-    style={{
-      backgroundImage: `url(${Hero})`,
-      backgroundRepeat: "no-repeat",
-      backgroundColor: "black", // prevents gray gap if image doesn't fully cover
-    }}
-  ></div>
+ <section className="relative w-full h-screen overflow-hidden">
+      {/* Background image for desktop (landscape) */}
+      <div
+        className="absolute inset-0 w-full h-full bg-center bg-no-repeat bg-cover hidden md:block"
+        style={{
+          backgroundImage: `url(${Hero})`,
+          backgroundPosition: "center 20%",
+          backgroundColor: "black",
+          transform: "scale(1.15)",
+          transformOrigin: "center",
+        }}
+      ></div>
 
-  <div
-    className="absolute inset-0"
-    style={{
-      background: `
-        linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)),
-        linear-gradient(to left, rgba(39,162,216,0.5) 0%, rgba(39,162,216,0.0) 40%)
-      `,
-    }}
-  ></div>
+      {/* Background image for mobile (portrait) */}
+      <div
+        className="absolute inset-0 w-full h-full bg-center bg-no-repeat bg-cover block md:hidden"
+        style={{
+          backgroundImage: `url(${HeroMobile})`,
+          backgroundPosition: "center center",
+          backgroundColor: "black",
+          transform: "scale(1.1)",
+          transformOrigin: "center",
+        }}
+      ></div>
 
-  <div className="absolute inset-0 flex items-center">
-    <div className="w-full px-4 lg:px-8 text-white">
-      <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">
-        Our Services
-      </h1>
-      <p className="mt-4 text-lg md:text-xl max-w-2xl">
-        Transforming business operations through smart ERP, system integration, and custom software solutions.
-      </p>
-    </div>
-  </div>
-</section>
+      {/* Overlay gradients */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: `
+            linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)),
+            linear-gradient(to left, rgba(39,162,216,0.5) 0%, rgba(39,162,216,0.0) 40%)
+          `,
+        }}
+      ></div>
 
-
+      {/* Text content */}
+      <div className="absolute inset-0 flex items-center">
+        <div className="w-full px-4 lg:px-8 text-white">
+          <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">
+            Our Services
+          </h1>
+          <p className="mt-4 text-lg md:text-xl max-w-2xl">
+            Transforming business operations through smart ERP, system
+            integration, and custom software solutions.
+          </p>
+        </div>
+      </div>
+    </section>
 
 
      <section className="bg-white py-8 container mx-auto px-4 md:px-8 lg:px-12">

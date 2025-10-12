@@ -27,7 +27,7 @@ import mPower from "./../assets/clientLogo/mPower.png";
 import fewis from "./../assets/clientLogo/fewis.png";
 import osiri from "./../assets/clientLogo/osiri.png";
 import above_the_footer from "./../assets/above_the_footer.png";
-import beltechImpact from "./../assets/homepage/BeltechImapctNew.png";
+import beltechImpact from "./../assets/homepage/beltechimpactfinal.jpg";
 
 const Homepage: React.FC = () => {
   return (
@@ -40,8 +40,8 @@ const Homepage: React.FC = () => {
     backgroundImage: `url(${hero})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    backgroundRepeat: "no-repeat", // ensure no tiling
-    backgroundColor: "black", // fill gaps with pure black (so no gray shows)
+    backgroundRepeat: "no-repeat", 
+    backgroundColor: "black", 
     minHeight: "100vh",
   }}
 >
