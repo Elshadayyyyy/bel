@@ -109,7 +109,7 @@ const Footer = () => {
         {/* Bottom Line */}
         <div className="border-t border-gray-800 mt-16 pt-8 text-center">
           <p className="text-[#9CA3AF] text-sm">
-            © 2024 BelTech Solutions. All rights reserved. | Addis Ababa, Ethiopia
+            © 2025 BelTech Solutions. All rights reserved. | Addis Ababa, Ethiopia
           </p>
         </div>
       </div>

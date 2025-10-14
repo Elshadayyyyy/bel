@@ -12,7 +12,7 @@ const Servicespage = () => {
   return (
     <div className="min-h-screen font-sans text-gray-800 antialiased">
  <section className="relative w-full h-screen overflow-hidden">
-      {/* Background image for desktop (landscape) */}
+
       <div
         className="absolute inset-0 w-full h-full bg-center bg-no-repeat bg-cover hidden md:block"
         style={{
@@ -23,8 +23,6 @@ const Servicespage = () => {
           transformOrigin: "center",
         }}
       ></div>
-
-      {/* Background image for mobile (portrait) */}
       <div
         className="absolute inset-0 w-full h-full bg-center bg-no-repeat bg-cover block md:hidden"
         style={{
@@ -35,8 +33,6 @@ const Servicespage = () => {
           transformOrigin: "center",
         }}
       ></div>
-
-      {/* Overlay gradients */}
       <div
         className="absolute inset-0"
         style={{
@@ -47,7 +43,6 @@ const Servicespage = () => {
         }}
       ></div>
 
-      {/* Text content */}
       <div className="absolute inset-0 flex items-center">
         <div className="w-full px-4 lg:px-8 text-white">
           <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">
@@ -62,10 +57,9 @@ const Servicespage = () => {
     </section>
 
 
-     <section className="bg-white py-8 container mx-auto px-4 md:px-8 lg:px-12">
+     <section className="bg-white py-11 container mx-auto px-4 md:px-8 lg:px-12">
   <div className="flex flex-col lg:flex-row items-start gap-12">
     
-    {/* Left side: Text */}
     <div className="flex-1 flex flex-col justify-between">
       <div>
         <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
@@ -106,7 +100,6 @@ const Servicespage = () => {
       </div>
     </div>
 
-    {/* Right side: Image */}
     <div className="flex-1 flex justify-center items-start">
       <img
         src={ERPImp}

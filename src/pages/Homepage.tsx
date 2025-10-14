@@ -14,115 +14,103 @@ import {
   Shield,
   ArrowDown,
   Award,
-  Sparkles,
 } from "lucide-react";
 import hero from "./../assets/homepage/hero.png";
 import odoo from "./../assets/homepage/odoo.png";
 import odooErp from "./../assets/homepage/oddoNew.png";
-import custom_soft_dev from "./../assets/homepage/customSoft.png";
-import bussiness_automation_int from "./../assets/homepage/bussinessAuto.png";
+import custom_soft_dev from "./../assets/homepage/customSoftNew.jpg";
+import bussiness_automation_int from "./../assets/homepage/automationAndIntegration.jpg";
 import emointel from "./../assets/clientLogo/emointel.png";
 import frontline from "./../assets/clientLogo/frontline.png";
 import mPower from "./../assets/clientLogo/mPower.png";
 import fewis from "./../assets/clientLogo/fewis.png";
 import osiri from "./../assets/clientLogo/osiri.png";
 import above_the_footer from "./../assets/above_the_footer.png";
-import beltechImpact from "./../assets/homepage/beltechimpactfinal.jpg";
+import beltechImpact from "./../assets/homepage/beltechImpact.png";
 
 const Homepage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-[#F0F5F9]">
       <main className="flex-grow">
-      {/* hero section */}
-<section
-  className="relative text-white flex items-center justify-center"
-  style={{
-    backgroundImage: `url(${hero})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat", 
-    backgroundColor: "black", 
-    minHeight: "100vh",
-  }}
->
-  {/* Main content centered vertically */}
-  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center pt-32 pb-24">
-    <div className="flex flex-col items-center text-center w-full">
-      {/* DIGITAL TRANSFORMATION EXPERTS - slightly left but aligned */}
-      <div className="mb-6 relative w-full max-w-3xl mx-auto flex justify-center md:justify-start">
-        <div className="relative inline-flex items-center text-left -translate-x-6 md:-translate-x-25">
-          <div className="hidden md:block h-0.5 w-16 bg-[#27A2D8] mr-6"></div>
-          <span className="inline-block text-sm font-medium text-[#27A2D8]">
-            DIGITAL TRANSFORMATION EXPERTS
-          </span>
-        </div>
-      </div>
-
-      {/* Heading */}
-      <h1 className="text-4xl md:text-6xl font-light mb-6 leading-tight">
-        Streamline. Automate. Scale.
-      </h1>
-
-      {/* Paragraph */}
-      <p className="text-lg md:text-xl text-white max-w-3xl mx-auto mb-0">
-        Transforming African businesses with ERP, automation, and smart software solutions.
-      </p>
-
-      {/* Buttons */}
-      <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-        <Button
-          size="lg"
-          className="text-white px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8]"
-          onClick={() => (window.location.href = "/Contact")}
+        {/* hero section */}
+        <section
+          className="relative text-white flex items-center justify-center"
+          style={{
+            backgroundImage: `url(${hero})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundColor: "black",
+            minHeight: "100vh",
+          }}
         >
-          Get a Free Consultation
-        </Button>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center pt-32 pb-24">
+            <div className="flex flex-col items-center text-center w-full">
+              <div className="mb-6 relative w-full max-w-3xl mx-auto flex justify-center md:justify-start">
+                <div className="relative inline-flex items-center text-left -translate-x-6 md:-translate-x-25">
+                  <div className="hidden md:block h-0.5 w-16 bg-[#27A2D8] mr-6"></div>
+                  <span className="inline-block text-sm font-medium text-[#27A2D8]">
+                    DIGITAL TRANSFORMATION EXPERTS
+                  </span>
+                </div>
+              </div>
+              <h1 className="text-4xl md:text-6xl font-light mb-6 leading-tight">
+                Streamline. Automate. Scale.
+              </h1>
+              <p className="text-lg md:text-xl text-white max-w-3xl mx-auto mb-0">
+                Transforming African businesses with ERP, automation, and smart software solutions.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                <Button
+                  size="lg"
+                  className="text-white px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8]"
+                  onClick={() => (window.location.href = "/Contact")}
+                >
+                  Get a Free Consultation
+                </Button>
 
-        <a href="/Contact">
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-white text-white px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-transparent"
-          >
-            See Live Demo
-          </Button>
-        </a>
+                <a href="/Contact">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-white text-white px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-transparent"
+                  >
+                    See Live Demo
+                  </Button>
+                </a>
 
-        <Button
-          size="lg"
-          variant="outline"
-          className="border-white text-white px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-transparent"
-          onClick={() => (window.location.href = "/Contact")}
-        >
-          Book a Demo
-        </Button>
-      </div>
-    </div>
-  </div>
-
-  {/* Discover Our Solutions always at the bottom */}
-  <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-center flex flex-col items-center pointer-events-auto">
-    <span className="text-sm text-white mb-2">Discover Our Solutions</span>
-    <button
-      className="p-0 bg-transparent hover:bg-transparent transition-colors duration-200"
-      onClick={() => {
-        const solutionsSection = document.getElementById("solutions-section");
-        if (solutionsSection) {
-          solutionsSection.scrollIntoView({ behavior: "smooth" });
-        }
-      }}
-    >
-      <ArrowDown className="w-8 h-8 text-[#27A2D8]" />
-    </button>
-  </div>
-</section>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-transparent"
+                  onClick={() => (window.location.href = "/Contact")}
+                >
+                  Book a Demo
+                </Button>
+              </div>
+            </div>
+          </div>
+          <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-center flex flex-col items-center pointer-events-auto">
+            <span className="text-sm text-white mb-2">Discover Our Solutions</span>
+            <button
+              className="p-0 bg-transparent hover:bg-transparent transition-colors duration-200"
+              onClick={() => {
+                const solutionsSection = document.getElementById("solutions-section");
+                if (solutionsSection) {
+                  solutionsSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
+              <ArrowDown className="w-8 h-8 text-[#27A2D8]" />
+            </button>
+          </div>
+        </section>
 
 
 
         {/* our soluton section*/}
         <section id="solutions-section" className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Section Header */}
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Our Solutions
@@ -133,9 +121,8 @@ const Homepage: React.FC = () => {
               </p>
             </div>
 
-            {/* Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Card 1 */}
+
               <div className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0">
                 <div className="w-full h-64 overflow-hidden">
                   <img
@@ -163,7 +150,6 @@ const Homepage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Card 2 */}
               <div className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0">
                 <div className="w-full h-64 overflow-hidden">
                   <img
@@ -174,7 +160,7 @@ const Homepage: React.FC = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-black mb-3">
-                  Automation & Integration
+                    Automation & Integration
                   </h3>
                   <p className="text-base font-normal text-black mb-4">
                     Automation workflows that reduce
@@ -191,7 +177,6 @@ const Homepage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Card 3 */}
               <div className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0">
                 <div className="w-full h-64 overflow-hidden">
                   <img
@@ -286,7 +271,7 @@ const Homepage: React.FC = () => {
                     </h3>
                     <p className="text-base font-normal text-gray-700">
                       Handle more tasks with the same or fewer human resources
-as your business grows. 
+                      as your business grows.
 
                     </p>
                   </div>
@@ -387,10 +372,6 @@ as your business grows.
         <section className="py-10 bg-[#f7f8fa]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h6 className="flex justify-center items-center text-sm md:text-md text-[#787b81] mb-2 font-normal">
-                <Sparkles className="h-6 w-6 mr-0.5 text-[#27A2D8]" />
-                SOFTWARE DEVELOPMENT
-              </h6>
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
                 We Build Digital Solutions
               </h2>
@@ -494,7 +475,8 @@ as your business grows.
             </div>
           </div>
         </section>
-        {/* testimonial section */} <section className="py-10 bg-white relative overflow-hidden">
+        {/* testimonial section */}
+        <section className="py-10 bg-white relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -505,9 +487,9 @@ as your business grows.
               </p>
             </div>
 
-            {/* Marquee wrapper */}
             <div className="relative overflow-hidden">
-              <div className="flex gap-12 whitespace-nowrap animate-[marquee_30s_linear_infinite]">
+              {/* 👇 This flex container scrolls smoothly forever */}
+              <div className="flex gap-12 whitespace-nowrap animate-marquee will-change-transform">
                 {[
                   { name: "Emointel leaders corner", img: emointel, testimonial: "Emointel leaders corner loved our digital transformation solutions!" },
                   { name: "Frontline Estate Solution LLC", img: frontline, testimonial: "Frontline Estate Solution LLC experienced amazing growth with BelTech Solutions!" },
@@ -515,7 +497,7 @@ as your business grows.
                   { name: "Fewis Digital Medical Solutions", img: fewis, testimonial: "Fewis Digital Medical Solutions saw remarkable results!" },
                   { name: "Osiri University", img: osiri, testimonial: "Osiri University appreciated our efficiency!" },
                 ]
-
+                  // duplicate once for seamless flow
                   .concat([
                     { name: "Emointel leaders corner", img: emointel, testimonial: "Emointel leaders corner loved our digital transformation solutions!" },
                     { name: "Frontline Estate Solution LLC", img: frontline, testimonial: "Frontline Estate Solution LLC experienced amazing growth with BelTech Solutions!" },
@@ -529,8 +511,11 @@ as your business grows.
                     if (idx % 5 === 2) width = "w-98";
 
                     return (
-                      <div key={idx} className="relative flex flex-col items-center group flex-shrink-0">
-
+                      <div
+                        key={idx}
+                        className="relative flex flex-col items-center group flex-shrink-0"
+                      >
+                        {/* Logo */}
                         <div
                           className={`flex items-center justify-center transition-transform duration-200 group-hover:scale-110 z-10 ${width} ${height}`}
                         >
@@ -541,13 +526,13 @@ as your business grows.
                           />
                         </div>
 
-                        {/* Testimonial */}
+                        {/* Testimonial tooltip */}
                         <div
                           className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full 
-                             opacity-0 group-hover:opacity-100 group-hover:translate-y-2 
-                             transition-all duration-300 
-                             w-64 max-w-xs bg-white shadow-lg rounded-lg 
-                             p-4 text-center z-50 pointer-events-none"
+                    opacity-0 group-hover:opacity-100 group-hover:translate-y-2 
+                    transition-all duration-300 
+                    w-64 max-w-xs bg-white shadow-lg rounded-lg 
+                    p-4 text-center z-50 pointer-events-none"
                         >
                           <p className="text-base font-normal text-black whitespace-normal break-words line-clamp-2">
                             "{client.testimonial}"
@@ -560,16 +545,35 @@ as your business grows.
             </div>
           </div>
 
-          {/* Marquee animation */}
+          {/* Custom animation styles */}
           <style>
             {`
       @keyframes marquee {
-        0% { transform: translateX(0%); }
+        0% { transform: translateX(0); }
         100% { transform: translateX(-50%); }
+      }
+
+      .animate-marquee {
+        display: flex;
+        width: max-content;
+        animation: marquee 30s linear infinite;
+      }
+
+      /* 👇 This eliminates the visible "jump" at the loop point */
+      .animate-marquee::after {
+        content: '';
+        display: block;
+        width: 50%;
+      }
+
+      /* Optimize for smooth GPU rendering */
+      .will-change-transform {
+        will-change: transform;
       }
     `}
           </style>
         </section>
+
 
 
         <section
