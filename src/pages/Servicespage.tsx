@@ -104,7 +104,7 @@ const Servicespage = () => {
       <img
         src={ERPImp}
         alt="ERP Implementation"
-        className="rounded-lg object-contain w-full max-h-[500px] lg:max-h-[450px]"
+        className="rounded-3xl object-contain w-full max-h-[500px] lg:max-h-[450px]"
         style={{ objectPosition: 'top' }}
       />
     </div>
@@ -179,7 +179,7 @@ const Servicespage = () => {
             <img
               src={customSoft}
               alt="Custom Software Development"
-              className="rounded-lg object-cover w-full h-full max-h-[500px]"
+              className="rounded-2xl object-cover w-full h-full max-h-[500px]"
             />
           </div>
         </div>
