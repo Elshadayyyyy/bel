@@ -18,7 +18,7 @@ import {
 import hero from "./../assets/homepage/hero.png";
 import odoo from "./../assets/homepage/odoo.png";
 import odooErp from "./../assets/homepage/oddoNew.png";
-import custom_soft_dev from "./../assets/homepage/customSoftNew.jpg";
+import custom_soft_dev from "./../assets/homepage/customSoftNew.png";
 import bussiness_automation_int from "./../assets/homepage/automationAndIntegration.jpg";
 import emointel from "./../assets/clientLogo/emointel.png";
 import frontline from "./../assets/clientLogo/frontline.png";
