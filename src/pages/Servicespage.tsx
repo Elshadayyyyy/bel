@@ -57,7 +57,7 @@ const Servicespage = () => {
     </section>
 
 
-     <section className="bg-white py-11 container mx-auto px-4 md:px-8 lg:px-12">
+   <section className="bg-white py-11 container mx-auto px-4 md:px-8 lg:px-12">
   <div className="flex flex-col lg:flex-row items-start gap-12">
     
     <div className="flex-1 flex flex-col justify-between">
@@ -104,13 +104,12 @@ const Servicespage = () => {
       <img
         src={ERPImp}
         alt="ERP Implementation"
-        className="rounded-3xl object-contain w-full max-h-[500px] lg:max-h-[450px]"
-        style={{ objectPosition: 'top' }}
+        className="rounded-3xl object-cover w-full h-full max-h-[500px]"
+        style={{ objectPosition: 'center' }}
       />
     </div>
   </div>
 </section>
-
 
       <section className="bg-gray-100 py-10">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
