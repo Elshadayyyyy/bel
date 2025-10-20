@@ -475,8 +475,122 @@ const Homepage: React.FC = () => {
             </div>
           </div>
         </section>
+        {/* Packages Section */}
+<section className="py-16 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Our Packages
+      </h2>
+      <p className="text-xl font-normal text-black max-w-3xl mx-auto">
+        Pick the right ERP package designed for your business size and growth goals.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Starter */}
+      <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+        <h3 className="text-2xl font-bold text-black mb-2">Starter</h3>
+        <p className="text-gray-800 italic mb-1">For small businesses getting started with ERP</p>
+        <p className="text-black mb-1">
+          <span className="font-semibold">Ideal for:</span> Startups, small retail or service businesses
+        </p>
+
+        {/* Features */}
+        <h4 className="font-semibold mb-2">Features:</h4>
+        <ul className="list-disc list-inside text-black mb-4 space-y-1">
+          <li>Sales & Purchase Management</li>
+          <li>Inventory Tracking</li>
+          <li>Basic Accounting & Reporting</li>
+          <li>Standard Dashboards</li>
+        </ul>
+
+        {/* Users / Seats */}
+        <div className="flex items-center text-gray-800 font-medium mb-6">
+          <Users className="w-5 h-5 text-[#27A2D8] mr-2" />
+          Up to 5 Users
+        </div>
+
+        {/* CTA */}
+        <Button
+          size="lg"
+          className="w-full text-white bg-[#27A2D8] hover:scale-105 transition-all duration-200"
+          onClick={() => (window.location.href = "/contact")}
+        >
+          Get Started
+        </Button>
+      </div>
+
+      {/* Professional */}
+      <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+        <h3 className="text-2xl font-bold text-black mb-2">Professional</h3>
+        <p className="text-gray-800 italic mb-1">For growing SMEs that need more automation</p>
+        <p className="text-black mb-1">
+          <span className="font-semibold">Ideal for:</span> Medium businesses expanding operations
+        </p>
+
+        <h4 className="font-semibold mb-2">Features:</h4>
+        <ul className="list-disc list-inside text-black mb-4 space-y-1">
+          <li>All Starter modules</li>
+          <li>HR & Payroll</li>
+          <li>POS & eCommerce</li>
+          <li>Workflow Automation (approvals, notifications)</li>
+          <li>Customizable Reports & Dashboards</li>
+        </ul>
+
+        <div className="flex items-center text-gray-800 font-medium mb-6">
+          <Users className="w-5 h-5 text-[#27A2D8] mr-2" />
+          10–20 Users
+        </div>
+
+        <Button
+          size="lg"
+          className="w-full text-white bg-[#27A2D8] hover:scale-105 transition-all duration-200"
+          onClick={() => (window.location.href = "/contact")}
+        >
+          Request a Demo
+        </Button>
+      </div>
+
+      {/* Enterprise */}
+      <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+        <h3 className="text-2xl font-bold text-black mb-2">Enterprise</h3>
+        <p className="text-gray-800 italic mb-1">For large organizations with advanced needs</p>
+        <p className="text-black mb-1">
+          <span className="font-semibold">Ideal for:</span> Multi-branch operations, complex workflows, large teams
+        </p>
+
+        <h4 className="font-semibold mb-2">Features:</h4>
+        <ul className="list-disc list-inside text-black mb-4 space-y-1">
+          <li>All Professional modules</li>
+          <li>Manufacturing (MRP)</li>
+          <li>Marketing & Campaigns</li>
+          <li>Project Management & Advanced Analytics</li>
+          <li>Multi-branch & Multi-warehouse support</li>
+          <li>Custom Integrations & Automation</li>
+        </ul>
+
+        <div className="flex items-center text-gray-800 font-medium mb-6">
+          <Users className="w-5 h-5 text-[#27A2D8] mr-2" />
+          20+ Users
+        </div>
+
+        <Button
+          size="lg"
+          className="w-full text-white bg-[#27A2D8] hover:scale-105 transition-all duration-200"
+          onClick={() => (window.location.href = "/contact")}
+        >
+          Request a Demo
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        
         {/* testimonial section */}
-        <section className="py-10 bg-white relative overflow-hidden">
+        <section className="py-10 bg-[#f7f8fa] relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
