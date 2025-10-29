@@ -6,6 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import contactHero from "./../assets/contactHero.png";
 import above_the_footer from "./../assets/above_the_footer.png";
 import { Dot } from "lucide-react";
+import { submitContact } from "../api/client";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,35 +24,62 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Now all backend-required fields are checked
+    const requiredFields = ["firstName", "lastName", "email", "phone", "organization", "message"] as const;
     const newErrors: any = {};
-    if (!formData.firstName) newErrors.firstName = "This field is required";
-    if (!formData.lastName) newErrors.lastName = "This field is required";
-    if (!formData.email) newErrors.email = "This field is required";
-    if (!formData.phone) newErrors.phone = "This field is required";
-    if (!formData.organization) newErrors.organization = "This field is required";
-    if (!formData.message) newErrors.message = "This field is required";
+
+    requiredFields.forEach((field) => {
+      if (!formData[field]) {
+        newErrors[field] = "This field is required";
+      }
+    });
 
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      toast.success("Your message is sent successfully! We will get back to you as soon as possible.", {
-        style: {
-          background: "#27A2D8",
-          color: "#ffffff",
-          boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-          borderRadius: "8px",
-        },
-      });
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        organization: "",
-        message: "",
+      try {
+        const payload = {
+          name: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          organization: formData.organization,
+          message: formData.message,
+        };
+
+        await submitContact(payload);
+
+        toast.success(
+          "Your message is sent successfully! We will get back to you as soon as possible.",
+          {
+            style: {
+              background: "#27A2D8",
+              color: "#ffffff",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+              borderRadius: "8px",
+            },
+          }
+        );
+
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          organization: "",
+          message: "",
+        });
+      } catch (err: any) {
+        toast.error(err?.response?.data?.message || "Failed to send message", {
+          style: { background: "#D82727", color: "#ffffff" },
+        });
+      }
+    } else {
+      toast.error("Please fill all the required fields", {
+        style: { background: "#D82727", color: "#ffffff" },
       });
     }
   };
@@ -140,12 +168,10 @@ const Contact = () => {
           {/* Right side: FORM */}
           <div className="w-full flex justify-center">
             <form className="w-full max-w-md space-y-6" onSubmit={handleSubmit}>
-              {/* Paragraph above inputs */}
               <p className="text-gray-600 mb-6">
                 Questions, comments, or suggestions? Simply fill in the form and we'll be in touch shortly.
               </p>
 
-              {/* Grid Inputs */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input
                   name="firstName"
@@ -196,7 +222,7 @@ const Contact = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Your message..."
+                placeholder="Your message*..."
                 className={`w-full py-3 px-4 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 min-h-[150px] ${errors.message ? "border-red-500" : ""}`}
               />
 
@@ -217,21 +243,10 @@ const Contact = () => {
           backgroundPosition: "center",
         }}
       >
-        <div
-          className="absolute inset-0 z-0"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
-        ></div>
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            background: "linear-gradient(to right, #31A8EB, #61C7D5)",
-            opacity: 0.5,
-          }}
-        ></div>
+        <div className="absolute inset-0 z-0" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}></div>
+        <div className="absolute inset-0 z-0" style={{ background: "linear-gradient(to right, #31A8EB, #61C7D5)", opacity: 0.5 }}></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Transform Your Business?
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Business?</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             Join hundreds of African businesses that have streamlined their operations with BelTech Solutions.
           </p>
