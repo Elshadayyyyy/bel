@@ -58,7 +58,7 @@ const SolutionsPage = () => {
     />
     <div className="px-6 pt-4 pb-3">
       <h3 className="text-xl font-bold leading-snug mb-1">
-        ERP for a Textile Manufacturer
+        ERP for import/export company
       </h3>
     </div>
     <div className="px-6 pb-6">

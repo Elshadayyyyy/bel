@@ -20,11 +20,10 @@ import odoo from "./../assets/homepage/odoo.png";
 import odooErp from "./../assets/homepage/oddoNew.png";
 import custom_soft_dev from "./../assets/homepage/customSoftNew.png";
 import bussiness_automation_int from "./../assets/homepage/automationAndIntegration.jpg";
-import emointel from "./../assets/clientLogo/emointel.png";
-import frontline from "./../assets/clientLogo/frontline.png";
-import mPower from "./../assets/clientLogo/mPower.png";
-import fewis from "./../assets/clientLogo/fewis.png";
-import osiri from "./../assets/clientLogo/osiri.png";
+import eyoha from "./../assets/clientLogo/eyoha.png";
+import Roha from "./../assets/clientLogo/RohaCake.png";
+import SkillsBridge from "./../assets/clientLogo/skillBridge.png";
+import diligent from "./../assets/clientLogo/diligent.png";
 import above_the_footer from "./../assets/above_the_footer.png";
 import beltechImpact from "./../assets/homepage/beltechImpact.png";
 
@@ -475,8 +474,7 @@ const Homepage: React.FC = () => {
             </div>
           </div>
         </section>
-        {/* Packages Section */}
-<section className="py-16 bg-white">
+       <section className="py-16 bg-white">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="text-center mb-16">
       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -491,27 +489,29 @@ const Homepage: React.FC = () => {
       {/* Starter */}
       <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
         <h3 className="text-2xl font-bold text-black mb-2">Starter</h3>
-        <p className="text-gray-800 italic mb-1">For small businesses getting started with ERP</p>
+        <p className="text-gray-800 italic mb-1">
+          For small businesses getting started with ERP
+        </p>
         <p className="text-black mb-1">
           <span className="font-semibold">Ideal for:</span> Startups, small retail or service businesses
         </p>
 
         {/* Features */}
         <h4 className="font-semibold mb-2">Features:</h4>
-        <ul className="list-disc list-inside text-black mb-4 space-y-1">
-          <li>Sales & Purchase Management</li>
-          <li>Inventory Tracking</li>
-          <li>Basic Accounting & Reporting</li>
-          <li>Standard Dashboards</li>
+        <ul className="text-black mb-4 space-y-2">
+          {[
+            "Sales & Purchase Management",
+            "Inventory Tracking",
+            "Basic Accounting & Reporting",
+            "Standard Dashboards",
+          ].map((feature, i) => (
+            <li key={i} className="flex items-start space-x-2">
+              <CheckCircle className="text-[#27A2D8] w-5 h-5 mt-0.5" />
+              <span>{feature}</span>
+            </li>
+          ))}
         </ul>
 
-        {/* Users / Seats */}
-        <div className="flex items-center text-gray-800 font-medium mb-6">
-          <Users className="w-5 h-5 text-[#27A2D8] mr-2" />
-          Up to 5 Users
-        </div>
-
-        {/* CTA */}
         <Button
           size="lg"
           className="w-full text-white bg-[#27A2D8] hover:scale-105 transition-all duration-200"
@@ -524,24 +524,28 @@ const Homepage: React.FC = () => {
       {/* Professional */}
       <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
         <h3 className="text-2xl font-bold text-black mb-2">Professional</h3>
-        <p className="text-gray-800 italic mb-1">For growing SMEs that need more automation</p>
+        <p className="text-gray-800 italic mb-1">
+          For growing SMEs that need more automation
+        </p>
         <p className="text-black mb-1">
           <span className="font-semibold">Ideal for:</span> Medium businesses expanding operations
         </p>
 
         <h4 className="font-semibold mb-2">Features:</h4>
-        <ul className="list-disc list-inside text-black mb-4 space-y-1">
-          <li>All Starter modules</li>
-          <li>HR & Payroll</li>
-          <li>POS & eCommerce</li>
-          <li>Workflow Automation (approvals, notifications)</li>
-          <li>Customizable Reports & Dashboards</li>
+        <ul className="text-black mb-4 space-y-2">
+          {[
+            "All Starter modules",
+            "HR & Payroll",
+            "POS & eCommerce",
+            "Workflow Automation (approvals, notifications)",
+            "Customizable Reports & Dashboards",
+          ].map((feature, i) => (
+            <li key={i} className="flex items-start space-x-2">
+              <CheckCircle className="text-[#27A2D8] w-5 h-5 mt-0.5" />
+              <span>{feature}</span>
+            </li>
+          ))}
         </ul>
-
-        <div className="flex items-center text-gray-800 font-medium mb-6">
-          <Users className="w-5 h-5 text-[#27A2D8] mr-2" />
-          10–20 Users
-        </div>
 
         <Button
           size="lg"
@@ -555,25 +559,29 @@ const Homepage: React.FC = () => {
       {/* Enterprise */}
       <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
         <h3 className="text-2xl font-bold text-black mb-2">Enterprise</h3>
-        <p className="text-gray-800 italic mb-1">For large organizations with advanced needs</p>
+        <p className="text-gray-800 italic mb-1">
+          For large organizations with advanced needs
+        </p>
         <p className="text-black mb-1">
           <span className="font-semibold">Ideal for:</span> Multi-branch operations, complex workflows, large teams
         </p>
 
         <h4 className="font-semibold mb-2">Features:</h4>
-        <ul className="list-disc list-inside text-black mb-4 space-y-1">
-          <li>All Professional modules</li>
-          <li>Manufacturing (MRP)</li>
-          <li>Marketing & Campaigns</li>
-          <li>Project Management & Advanced Analytics</li>
-          <li>Multi-branch & Multi-warehouse support</li>
-          <li>Custom Integrations & Automation</li>
+        <ul className="text-black mb-4 space-y-2">
+          {[
+            "All Professional modules",
+            "Manufacturing (MRP)",
+            "Marketing & Campaigns",
+            "Project Management & Advanced Analytics",
+            "Multi-branch & Multi-warehouse support",
+            "Custom Integrations & Automation",
+          ].map((feature, i) => (
+            <li key={i} className="flex items-start space-x-2">
+              <CheckCircle className="text-[#27A2D8] w-5 h-5 mt-0.5" />
+              <span>{feature}</span>
+            </li>
+          ))}
         </ul>
-
-        <div className="flex items-center text-gray-800 font-medium mb-6">
-          <Users className="w-5 h-5 text-[#27A2D8] mr-2" />
-          20+ Users
-        </div>
 
         <Button
           size="lg"
@@ -587,106 +595,103 @@ const Homepage: React.FC = () => {
   </div>
 </section>
 
-
         
-        {/* testimonial section */}
-        <section className="py-10 bg-[#f7f8fa] relative overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Our Happy Clients
-              </h2>
-              <p className="text-xl font-normal text-black max-w-3xl mx-auto">
-                See what our clients say about their digital transformation journey with BelTech Solutions.
-              </p>
-            </div>
+       {/* testimonial section */}
+<section className="py-8 bg-[#f7f8fa] relative overflow-hidden">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Our Happy Clients
+      </h2>
+      <p className="text-xl font-normal text-black max-w-3xl mx-auto">
+        See what our clients say about their digital transformation journey with BelTech Solutions.
+      </p>
+    </div>
 
-            <div className="relative overflow-hidden">
-              {/* 👇 This flex container scrolls smoothly forever */}
-              <div className="flex gap-12 whitespace-nowrap animate-marquee will-change-transform">
-                {[
-                  { name: "Emointel leaders corner", img: emointel, testimonial: "Emointel leaders corner loved our digital transformation solutions!" },
-                  { name: "Frontline Estate Solution LLC", img: frontline, testimonial: "Frontline Estate Solution LLC experienced amazing growth with BelTech Solutions!" },
-                  { name: "M Power Financing", img: mPower, testimonial: "M Power Financing praises our innovative approach!" },
-                  { name: "Fewis Digital Medical Solutions", img: fewis, testimonial: "Fewis Digital Medical Solutions saw remarkable results!" },
-                  { name: "Osiri University", img: osiri, testimonial: "Osiri University appreciated our efficiency!" },
-                ]
-                  // duplicate once for seamless flow
-                  .concat([
-                    { name: "Emointel leaders corner", img: emointel, testimonial: "Emointel leaders corner loved our digital transformation solutions!" },
-                    { name: "Frontline Estate Solution LLC", img: frontline, testimonial: "Frontline Estate Solution LLC experienced amazing growth with BelTech Solutions!" },
-                    { name: "M Power Financing", img: mPower, testimonial: "M Power Financing praises our innovative approach!" },
-                    { name: "Fewis Digital Medical Solutions", img: fewis, testimonial: "Fewis Digital Medical Solutions saw remarkable results!" },
-                    { name: "Osiri University", img: osiri, testimonial: "Osiri University appreciated our efficiency!" },
-                  ])
-                  .map((client, idx) => {
-                    let height = "h-40";
-                    let width = "w-40";
-                    if (idx % 5 === 2) width = "w-98";
+    <div className="relative overflow-hidden">
+      {/* 👇 Perfectly seamless marquee */}
+      <div className="flex gap-12 whitespace-nowrap animate-marquee will-change-transform">
+        {[
+          { name: "Eyoha Digitals", img: eyoha, testimonial: "Eyoha Digitals loved website we delivered!" },
+          { name: "Roha Cake and Bread Bakery", img: Roha, testimonial: "Roha Cake and Bread Bakery experienced amazing growth with BelTech Solutions product" },
+          { name: "SkillBridge Institute of Technology", img: SkillsBridge, testimonial: "SkillBridge Institute of Technology praises the webiste we made for their business!" },
+          { name: "Diligent trade Solution", img: diligent, testimonial: "Diligent trade Solutions saw remarkable results from the ERP we implmented!" },
+        ]
+          // Duplicate twice for a continuous flow
+          .concat([
+            { name: "Eyoha Digitals", img: eyoha, testimonial: "Eyoha Digitals loved website we delivered!" },
+            { name: "Roha Cake and Bread Bakery", img: Roha, testimonial: "Roha Cake and bread bakery experienced amazing growth with BelTech Solutions product" },
+            { name: "SkillBridge Institute of Technology", img: SkillsBridge, testimonial: "SkillBridge Institute of Technology praises the webiste we made for their business!" },
+            { name: "Diligent trade Solutions", img: diligent, testimonial: "Diligent trade Solutions saw remarkable results from the ERP we implmented!" },
+          ])
+          .concat([
+            { name: "Eyoha Digitals", img: eyoha, testimonial: "Eyoha Digitalsr loved website we delivered!" },
+            { name: "Roha Cake and Bread Bakery", img: Roha, testimonial: "Roha Cake and Bread Bakery experienced amazing growth with BelTech Solutions product" },
+            { name: "SkillBridge Institute of Technology", img: SkillsBridge, testimonial: "SkillBridge Institute of Technology praises the webiste we made for their business!" },
+            { name: "Diligent trade Solutions", img: diligent, testimonial: "Diligent trade Solutions saw remarkable results from the ERP we implmented!" },
+          ])
+          .map((client, idx) => (
+            <div
+              key={idx}
+              className="relative flex flex-col items-center group flex-shrink-0"
+            >
+              {/* Logo */}
+              <div
+                className="flex items-center justify-center transition-transform duration-200 group-hover:scale-110 z-10 w-44 h-44 md:w-48 md:h-48"
+              >
+                <img
+                  src={client.img}
+                  alt={client.name}
+                  className="h-full w-full object-contain"
+                />
+              </div>
 
-                    return (
-                      <div
-                        key={idx}
-                        className="relative flex flex-col items-center group flex-shrink-0"
-                      >
-                        {/* Logo */}
-                        <div
-                          className={`flex items-center justify-center transition-transform duration-200 group-hover:scale-110 z-10 ${width} ${height}`}
-                        >
-                          <img
-                            src={client.img}
-                            alt={client.name}
-                            className="h-full w-full object-contain"
-                          />
-                        </div>
-
-                        {/* Testimonial tooltip */}
-                        <div
-                          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full 
-                    opacity-0 group-hover:opacity-100 group-hover:translate-y-2 
-                    transition-all duration-300 
-                    w-64 max-w-xs bg-white shadow-lg rounded-lg 
-                    p-4 text-center z-50 pointer-events-none"
-                        >
-                          <p className="text-base font-normal text-black whitespace-normal break-words line-clamp-2">
-                            "{client.testimonial}"
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
+              {/* Tooltip */}
+              <div
+                className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full 
+                opacity-0 group-hover:opacity-100 group-hover:translate-y-2 
+                transition-all duration-300 
+                w-64 max-w-xs bg-white shadow-lg rounded-lg 
+                p-4 text-center z-50 pointer-events-none"
+              >
+                <p className="text-base font-normal text-black whitespace-normal break-words line-clamp-2">
+                  "{client.testimonial}"
+                </p>
               </div>
             </div>
-          </div>
+          ))}
+      </div>
+    </div>
+  </div>
 
-          {/* Custom animation styles */}
-          <style>
-            {`
+  {/* Custom animation styles */}
+  <style>
+    {`
       @keyframes marquee {
         0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+        100% { transform: translateX(-33.333%); } /* Matches 3 duplicates for perfect loop */
       }
 
       .animate-marquee {
         display: flex;
         width: max-content;
-        animation: marquee 30s linear infinite;
+        animation: marquee 40s linear infinite;
+        gap: 8rem; /* Nicely spaced but still smooth */
       }
 
-      /* 👇 This eliminates the visible "jump" at the loop point */
-      .animate-marquee::after {
-        content: '';
-        display: block;
-        width: 50%;
+      /* Keep hover working without stopping animation */
+      .animate-marquee * {
+        pointer-events: auto;
       }
 
-      /* Optimize for smooth GPU rendering */
+      /* Optimize GPU performance */
       .will-change-transform {
         will-change: transform;
       }
     `}
-          </style>
-        </section>
+  </style>
+</section>
+
 
 
 
