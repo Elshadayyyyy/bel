@@ -100,14 +100,15 @@ const Servicespage = () => {
       </div>
     </div>
 
-    <div className="flex-1 flex justify-center items-start">
-      <img
-        src={ERPImp}
-        alt="ERP Implementation"
-        className="rounded-3xl object-cover w-full h-full max-h-[500px]"
-        style={{ objectPosition: 'center' }}
-      />
-    </div>
+   <div className="flex-1 flex justify-center items-start overflow-hidden rounded-3xl max-h-[425px]">
+  <img
+    src={ERPImp}
+    alt="ERP Implementation"
+    className="w-full h-full object-cover"
+    style={{ objectPosition: 'center top' }}
+  />
+</div>
+
   </div>
 </section>
 
@@ -174,13 +175,16 @@ const Servicespage = () => {
             </ul>
           </div>
 
-          <div className="flex-1 flex justify-center items-center lg:justify-end">
-            <img
-              src={customSoft}
-              alt="Custom Software Development"
-              className="rounded-2xl object-cover w-full h-full max-h-[500px]"
-            />
-          </div>
+           <div className="flex-1 flex justify-center items-start overflow-hidden rounded-3xl max-h-[425px]">
+  <img
+    src={customSoft}
+    alt="Custom Software Development"
+    className="w-full h-full object-cover"
+    style={{ objectPosition: 'center top' }}
+  />
+</div>
+
+    
         </div>
 
      <div className="grid grid-cols-1 gap-8 mt-12 md:grid-cols-2 lg:grid-cols-4">

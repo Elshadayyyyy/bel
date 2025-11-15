@@ -1,9 +1,9 @@
 import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
 import solutionHero from "../assets/solutionpage/heroNew.png";
-import ERPforTextile from "../assets/solutionpage/ERPforTextile.png";
-import charityForSccma from "../assets/solutionpage/charityForSccma.png";
-import retailAutomation from "../assets/solutionpage/retailAutomation.png";
+import importEport from "./../assets/solutionpage/importExport.jpg";
+import eLearning from "./../assets/solutionpage/eLearning.jpg";
+import DigitalMarketingDetail from "../assets/solutionpage/diggityMarketing.jpg";
 import above_the_footer from "../assets/above_the_footer.png";
 
 const SolutionsPage = () => {
@@ -52,7 +52,7 @@ const SolutionsPage = () => {
 
   <div className="border border-gray-200 flex flex-col rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
     <img
-      src={ERPforTextile}
+      src={importEport}
       alt="ERP for Textile Manufacturer"
       className="w-full aspect-video object-cover"
     />
@@ -63,8 +63,7 @@ const SolutionsPage = () => {
     </div>
     <div className="px-6 pb-6">
       <p className="text-base font-normal text-gray-700 leading-relaxed">
-        Deployed a full-scale Odoo ERP to manage production, sales, inventory, and logistics for an African textile plant.
-      </p>
+    Deployed a full-scale ERP to manage orders, inventory, logistics, and finance for an African import-export company. </p>
       <Link
         to="/ERPDetail"
         className="mt-4 inline-block text-[#27A2D8] font-medium hover:underline hover:translate-x-1 transition-transform duration-200"
@@ -76,18 +75,18 @@ const SolutionsPage = () => {
 
   <div className="border border-gray-200 flex flex-col rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
     <img
-      src={charityForSccma}
+      src={eLearning}
       alt="Charity Platform"
       className="w-full aspect-video object-cover"
     />
     <div className="px-6 pt-4 pb-3">
       <h3 className="text-xl font-bold leading-snug mb-1">
-        Charity Platform for SCCMA
+       Website for E learning company
       </h3>
     </div>
     <div className="px-6 pb-6">
       <p className="text-base font-normal text-gray-700 leading-relaxed">
-        Built a volunteer & donation portal with dashboards, secure processes, and automated reports.
+       Developed a student-focused e-learning portal showcasing courses and enabling registration for SkillsBridge
       </p>
       <Link
         to="/CharityPlatform"
@@ -100,18 +99,18 @@ const SolutionsPage = () => {
 
   <div className="border border-gray-200 flex flex-col rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
     <img
-      src={retailAutomation}
+      src={DigitalMarketingDetail}
       alt="Retail Automation"
       className="w-full aspect-video object-cover"
     />
     <div className="px-6 pt-4 pb-3">
       <h3 className="text-xl font-bold leading-snug mb-1">
-        Retail Automation
+        Website for marketing company
       </h3>
     </div>
     <div className="px-6 pb-6">
       <p className="text-base font-normal text-gray-700 leading-relaxed">
-        Automated sales-stock syncing for a regional retail chain, ensuring accurate inventory across branches.
+        Developed a modern, responsive website to showcase services, and portfolios for digital marketing company.
       </p>
       <Link
         to="/RetailAuto"

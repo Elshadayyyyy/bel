@@ -6,8 +6,8 @@ import Aboutpage from "./pages/Aboutpage";
 import Servicespage from "./pages/Servicespage";
 import SolutionsPage from "./pages/Solutionspage";
 import ERPDetail from "./pages/ERPDetail";
-import CharityPlatform from "./pages/CharityPlatform";
-import RetailAuto from "./pages/RetailAuto";
+import CharityPlatform from "./pages/CharityPlatform"; // this page is also changed to e learinging solution
+import RetailAuto from "./pages/RetailAuto";//this page is changed in to digital marketing solution
 import Insights from "./pages/insights"
 import Contact from "./pages/Contact";
 

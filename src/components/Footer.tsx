@@ -122,7 +122,7 @@ const Footer = () => {
                 }
                 className="px-4 bg-[#27A2D8] hover:bg-[#1f8cb8] text-white rounded-md text-sm shadow-md transition-all"
               >
-                See Live Demo
+                Watch Live Demo
               </Button>
             </div>
           </div>
