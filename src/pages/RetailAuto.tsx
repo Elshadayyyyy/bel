@@ -1,7 +1,7 @@
 import { Button } from "../components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import digitalMarketing from "./../assets/solutionpage/diggityMarketing.jpg";
+import digitalMarketing from "./../assets/solutionpage/digitalMarketing.jpg";
 import above_the_footer from "../assets/above_the_footer.png";
 
 const RetailAuto = () => {

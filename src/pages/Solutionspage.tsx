@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import solutionHero from "../assets/solutionpage/heroNew.png";
 import importEport from "./../assets/solutionpage/importExport.jpg";
 import eLearning from "./../assets/solutionpage/eLearning.jpg";
-import DigitalMarketingDetail from "../assets/solutionpage/diggityMarketing.jpg";
+import DigitalMarketingDetail from "../assets/solutionpage/digitalMarketing.jpg";
 import above_the_footer from "../assets/above_the_footer.png";
 
 const SolutionsPage = () => {
