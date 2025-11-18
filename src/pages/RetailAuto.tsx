@@ -18,7 +18,7 @@ const RetailAuto = () => {
           />
           <button
             onClick={() => navigate(-1)}
-            className="absolute top-4 left-4 flex items-center text-black bg-white/70 hover:bg-white transition px-2 py-1 rounded shadow z-10"
+            className="absolute top-4 left-4 flex items-center text-black bg-white/70 hover:bg-white transition px-2 py-1 rounded shadow z-10 cursor-pointer"
           >
             <ArrowLeft className="mr-2 h-5 w-5" />
             Back
@@ -65,7 +65,7 @@ const RetailAuto = () => {
             placeholder=""
             className="w-full rounded-md px-3 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-[#27A2D8] bg-white"
           />
-          <Button className="w-full bg-[#27A2D8] hover:bg-[#4db7c5] text-white font-semibold py-2">
+          <Button className="w-full bg-[#27A2D8] hover:bg-[#4db7c5] text-white font-semibold py-2 cursor-pointer">
             Subscribe
           </Button>
         </div>
@@ -102,7 +102,7 @@ const RetailAuto = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8] text-white"
+              className="px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8] text-white cursor-pointer"
               onClick={() => window.location.href = '/contact'}
             >
               Start Your Digital Journey

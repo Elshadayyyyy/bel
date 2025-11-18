@@ -5,7 +5,6 @@ import { Button } from "../components/ui/button";
 import {
   CheckCircle, Users, Zap, Layers, TrendingUp, DollarSign, Globe, ArrowDown, Award, ShoppingCart, Factory, Truck, Building2, FileText, Hospital, UtensilsCrossed
 } from "lucide-react";
-import { motion } from "framer-motion";
 import hero from "./../assets/homepage/hero.png";
 import odoo from "./../assets/homepage/odoo.png";
 import odooErp from "./../assets/homepage/oddoNew.png";
@@ -105,23 +104,144 @@ const industries = [
     quote: "Know your profit per plate — not just your daily sales.",
   },
 ];
+
+// Card component for the ndustries we serve section
 function Card({ data }: { data: typeof industries[number] }) {
   const Icon = data.icon;
   return (
-    <div className="bg-white p-5 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+    <div className="group bg-white p-5 rounded-2xl shadow-md transition-all duration-300 flex flex-col justify-between hover:bg-[#27A2D8] hover:text-white">
       <div>
-        <div className="mb-4 flex h-10 w-10 items-center justify-center bg-[#f7f8fa] rounded-xl">
-          <Icon className="h-5 w-5 text-[#27A2D8]" />
+        <div className="mb-4 flex h-10 w-10 items-center justify-center bg-[#f7f8fa] rounded-xl group-hover:bg-white">
+          <Icon className="h-5 w-5 text-[#27A2D8] group-hover:text-[#27A2D8]" />
         </div>
-        <h3 className="text-lg font-semibold text-black mb-1">{data.title}</h3>
-        <p className="text-sm text-gray-700 mb-2">{data.lead}</p>
-        <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+        <h3 className="text-lg font-semibold text-black mb-1 group-hover:text-white">{data.title}</h3>
+        <p className="text-sm text-gray-700 mb-2 group-hover:text-white">{data.lead}</p>
+        <ul className="list-disc list-inside text-sm text-gray-700 space-y-1 group-hover:text-white">
           {data.bullets.map((b) => (
             <li key={b}>{b}</li>
           ))}
         </ul>
       </div>
-      <p className="italic text-xs text-gray-600 mt-3">{data.quote}</p>
+      <p className="italic text-xs text-gray-600 mt-3 group-hover:text-white">{data.quote}</p>
+    </div>
+  );
+}
+function IndustryCarousel() {
+  const trackRef = React.useRef<HTMLDivElement>(null);
+  const [index, setIndex] = React.useState(1);
+
+  const totalCards = industries.length;
+  let startX = 0;
+  let endX = 0;
+
+  const getCardWidth = () => {
+    if (!trackRef.current) return 0;
+    const first = trackRef.current.children[0] as HTMLElement;
+    return first.getBoundingClientRect().width + 24; // + gap
+  };
+
+  const slide = (direction: number) => {
+    if (!trackRef.current) return;
+
+    let newIndex = index + direction;
+    setIndex(newIndex);
+
+    const width = getCardWidth();
+
+    trackRef.current.style.transition = "transform 0.5s ease";
+    trackRef.current.style.transform = `translateX(-${newIndex * width}px)`;
+
+    setTimeout(() => {
+      if (!trackRef.current) return;
+
+      // Loop to last
+      if (newIndex === 0) {
+        trackRef.current.style.transition = "none";
+        setIndex(totalCards);
+        trackRef.current.style.transform = `translateX(-${totalCards * width}px)`;
+      }
+
+      // Loop to first
+      if (newIndex === totalCards + 1) {
+        trackRef.current.style.transition = "none";
+        setIndex(1);
+        trackRef.current.style.transform = `translateX(-${1 * width}px)`;
+      }
+    }, 500);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => { startX = e.touches[0].clientX; };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    endX = e.changedTouches[0].clientX;
+    const diff = endX - startX;
+    if (Math.abs(diff) < 40) return;
+    if (diff < 0) slide(1);
+    else slide(-1);
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => { startX = e.clientX; };
+  const handleMouseUp = (e: React.MouseEvent) => {
+    endX = e.clientX;
+    const diff = endX - startX;
+    if (Math.abs(diff) < 40) return;
+    if (diff < 0) slide(1);
+    else slide(-1);
+  };
+
+  React.useEffect(() => {
+    if (!trackRef.current) return;
+    const width = getCardWidth();
+    trackRef.current.style.transform = `translateX(-${1 * width}px)`;
+  }, []);
+
+  return (
+    <div className="relative flex items-center">
+      {/* Left Arrow */}
+      <button
+        onClick={() => slide(-1)}
+        className="absolute left-0 z-20 bg-transparent shadow-md p-3 rounded-full hover:bg-[#27A2D8] hover:text-white transition"
+      >
+        <ArrowDown className="rotate-90" />
+      </button>
+
+      {/* Slider wrapper */}
+      <div
+        className="overflow-hidden w-full"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+      >
+        <div
+          ref={trackRef}
+          className="flex gap-6 transition-transform duration-500"
+        >
+          {/* Clone last */}
+          <div className="min-w-full sm:min-w-[33.33%]">
+            <Card data={industries[totalCards - 1]} />
+          </div>
+
+          {/* Actual cards */}
+          {industries.map((item, i) => (
+            <div key={i} className="min-w-full sm:min-w-[33.33%]">
+              <Card data={item} />
+            </div>
+          ))}
+
+          {/* Clone first */}
+          <div className="min-w-full sm:min-w-[33.33%]">
+            <Card data={industries[0]} />
+          </div>
+        </div>
+      </div>
+
+      {/* Right Arrow */}
+      <button
+        onClick={() => slide(1)}
+        className="absolute right-0 z-20 bg-transparent shadow-md p-3 rounded-full hover:bg-[#27A2D8] hover:text-white transition"
+      >
+        <ArrowDown className="-rotate-90" />
+      </button>
     </div>
   );
 }
@@ -162,7 +282,7 @@ const Homepage: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                 <Button
                   size="lg"
-                  className="text-white px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8]"
+                  className="text-white px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8] cursor-pointer"
                   onClick={() => (window.location.href = "/Contact")}
                 >
                   Get a Free Consultation
@@ -172,7 +292,7 @@ const Homepage: React.FC = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white text-white px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-transparent"
+                    className="border-white text-white px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-transparent cursor-pointer"
                   >
                     See Live Demo
                   </Button>
@@ -181,7 +301,7 @@ const Homepage: React.FC = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white text-white px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-transparent"
+                  className="border-white text-white px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-transparent cursor-pointer"
                   onClick={() => (window.location.href = "/Contact")}
                 >
                   Book a Demo
@@ -200,7 +320,7 @@ const Homepage: React.FC = () => {
                 }
               }}
             >
-              <ArrowDown className="w-8 h-8 text-[#27A2D8]" />
+              <ArrowDown className="w-8 h-8 text-[#27A2D8] cursor-pointer"  />
             </button>
           </div>
         </section>
@@ -308,86 +428,87 @@ const Homepage: React.FC = () => {
 
 
         {/* why oddo part */}
-        <section className="py-10 bg-[#f7f8fa]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Why Odoo?
-              </h2>
-              <p className="text-xl font-normal text-black max-w-3xl mx-auto">
-                Odoo is the world's most popular open-source ERP system, trusted
-                by millions of businesses worldwide.
-              </p>
-            </div>
+       <section className="py-10 bg-[#f7f8fa]">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Why Odoo?
+      </h2>
+      <p className="text-xl font-normal text-black max-w-3xl mx-auto">
+        Odoo is the world's most popular open-source ERP system, trusted
+        by millions of businesses worldwide.
+      </p>
+    </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+      <div className="flex flex-col gap-6 h-full">
 
-              <div className="flex flex-col gap-6 h-full">
-                <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-200 flex items-start space-x-4">
-                  <CheckCircle className="w-6 h-6 text-[#27A2D8] flex-shrink-0" />
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">
-                      All-in-One Solution
-                    </h3>
-                    <p className="text-base font-normal text-gray-700">
-                      Manage sales, inventory, accounting, HR, and more from a
-                      single platform.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-200 flex items-start space-x-4">
-                  <Users className="w-6 h-6 text-[#27A2D8] flex-shrink-0" />
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">
-                      User-Friendly Interface
-                    </h3>
-                    <p className="text-base font-normal text-gray-700">
-                      Empower your team with an intuitive interface that is
-                      easy to navigate.
-
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-200 flex items-start space-x-4">
-                  <Layers className="w-6 h-6 text-[#27A2D8] flex-shrink-0" />
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">
-                      Modular Architecture
-                    </h3>
-                    <p className="text-base font-normal text-gray-700">
-                      Start with what you need and add modules as your business grows.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-200 flex items-start space-x-4">
-                  <TrendingUp className="w-6 h-6 text-[#27A2D8] flex-shrink-0" />
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">
-                      Scalable Growth
-                    </h3>
-                    <p className="text-base font-normal text-gray-700">
-                      Handle more tasks with the same or fewer human resources
-                      as your business grows.
-
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex h-full">
-                <img
-                  src={odoo}
-                  alt="Odoo Interface"
-                  className="w-full h-full rounded-2xl"
-                  style={{ height: "108%", width: "108%" }}
-                />
-              </div>
-            </div>
+        {/* Card 1 */}
+        <div className="group relative bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 flex items-start space-x-4 cursor-pointer hover:bg-[#27A2D8]">
+          <CheckCircle className="w-6 h-6 text-[#27A2D8] group-hover:text-white flex-shrink-0 transition-colors duration-300" />
+          <div>
+            <h3 className="text-lg font-bold text-gray-900 group-hover:text-white mb-1 transition-colors duration-300">
+              All-in-One Solution
+            </h3>
+            <p className="text-base font-normal text-gray-700 group-hover:text-white transition-colors duration-300">
+              Manage sales, inventory, accounting, HR, and more from a single platform.
+            </p>
           </div>
-        </section>
+        </div>
+
+        {/* Card 2 */}
+        <div className="group relative bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 flex items-start space-x-4 cursor-pointer hover:bg-[#27A2D8]">
+          <Users className="w-6 h-6 text-[#27A2D8] group-hover:text-white flex-shrink-0 transition-colors duration-300" />
+          <div>
+            <h3 className="text-lg font-bold text-gray-900 group-hover:text-white mb-1 transition-colors duration-300">
+              User-Friendly Interface
+            </h3>
+            <p className="text-base font-normal text-gray-700 group-hover:text-white transition-colors duration-300">
+              Empower your team with an intuitive interface that is easy to navigate.
+            </p>
+          </div>
+        </div>
+
+        {/* Card 3 */}
+        <div className="group relative bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 flex items-start space-x-4 cursor-pointer hover:bg-[#27A2D8]">
+          <Layers className="w-6 h-6 text-[#27A2D8] group-hover:text-white flex-shrink-0 transition-colors duration-300" />
+          <div>
+            <h3 className="text-lg font-bold text-gray-900 group-hover:text-white mb-1 transition-colors duration-300">
+              Modular Architecture
+            </h3>
+            <p className="text-base font-normal text-gray-700 group-hover:text-white transition-colors duration-300">
+              Start with what you need and add modules as your business grows.
+            </p>
+          </div>
+        </div>
+
+        {/* Card 4 */}
+        <div className="group relative bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 flex items-start space-x-4 cursor-pointer hover:bg-[#27A2D8]">
+          <TrendingUp className="w-6 h-6 text-[#27A2D8] group-hover:text-white flex-shrink-0 transition-colors duration-300" />
+          <div>
+            <h3 className="text-lg font-bold text-gray-900 group-hover:text-white mb-1 transition-colors duration-300">
+              Scalable Growth
+            </h3>
+            <p className="text-base font-normal text-gray-700 group-hover:text-white transition-colors duration-300">
+              Handle more tasks with the same or fewer human resources as your business grows.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div className="flex h-full">
+        <img
+          src={odoo}
+          alt="Odoo Interface"
+          className="w-full h-full rounded-2xl"
+          style={{ height: "108%", width: "108%" }}
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
 
         {/* beltech impact section*/}
         <section className="py-10 bg-white">
@@ -470,7 +591,7 @@ const Homepage: React.FC = () => {
         </section>
 
          {/*  Industries We Serve section*/}
-    <section className="py-10 bg-[#f7f8fa]">
+<section className="py-10 bg-[#f7f8fa]">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="text-center mb-14">
       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -481,54 +602,11 @@ const Homepage: React.FC = () => {
       </p>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-      {/* Column 1 */}
-      <div className="flex flex-col justify-center gap-6">
-        {industries.slice(0, 2).map((item, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-          >
-            <Card data={item} />
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Column 2 */}
-      <div className="flex flex-col gap-6">
-        {industries.slice(2, 5).map((item, index) => (
-          <motion.div
-            key={index + 2}
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-          >
-            <Card data={item} />
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Column 3 */}
-      <div className="flex flex-col justify-center gap-6">
-        {industries.slice(5, 7).map((item, index) => (
-          <motion.div
-            key={index + 5}
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-          >
-            <Card data={item} />
-          </motion.div>
-        ))}
-      </div>
-    </div>
+    {/* CAROUSEL */}
+    <IndustryCarousel />
   </div>
 </section>
+
 
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -570,7 +648,7 @@ const Homepage: React.FC = () => {
 
                 <Button
                   size="lg"
-                  className="w-full text-white bg-[#27A2D8] hover:scale-105 transition-all duration-200"
+                  className="w-full text-white bg-[#27A2D8] hover:scale-105 transition-all duration-200 cursor-pointer"
                   onClick={() => (window.location.href = "/contact")}
                 >
                   Get Started
@@ -605,7 +683,7 @@ const Homepage: React.FC = () => {
 
                 <Button
                   size="lg"
-                  className="w-full text-white bg-[#27A2D8] hover:scale-105 transition-all duration-200"
+                  className="w-full text-white bg-[#27A2D8] hover:scale-105 transition-all duration-200 cursor-pointer"
                   onClick={() => (window.location.href = "/contact")}
                 >
                   Request a Demo
@@ -641,7 +719,7 @@ const Homepage: React.FC = () => {
 
                 <Button
                   size="lg"
-                  className="w-full text-white bg-[#27A2D8] hover:scale-105 transition-all duration-200"
+                  className="w-full text-white bg-[#27A2D8] hover:scale-105 transition-all duration-200 cursor-pointer"
                   onClick={() => (window.location.href = "/contact")}
                 >
                   Contact Sales
@@ -785,14 +863,14 @@ const Homepage: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8]  text-white hover:bg-[#27A2D8]-100"
+                className="px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8]  text-white hover:bg-[#27A2D8]-100 cursor-pointer"
                 onClick={() => (window.location.href = "/contact")}
               >
                 Start Your Digital Journey
               </Button>
               <Button
                 size="lg"
-                className="px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8]  text-white hover:bg-[#27A2D8]-100"
+                className="px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8]  text-white hover:bg-[#27A2D8]-100 cursor-pointer"
                 onClick={() => (window.location.href = "/solutions")}
               >
                 View Success Stories

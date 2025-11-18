@@ -37,7 +37,7 @@ const ArticleCard = ({
       <CardFooter className="px-4 pt-1 pb-2">
         <button
           onClick={() => onReadMore(insight)}
-          className="inline-flex items-center text-[#27A2D8] font-medium hover:underline hover:translate-x-1 transition-transform duration-200"
+          className="inline-flex items-center text-[#27A2D8] font-medium hover:underline hover:translate-x-1 transition-transform duration-200 cursor-pointer"
         >
           Read More
         </button>
@@ -118,7 +118,7 @@ const Insight = () => {
           <div className="bg-white rounded-lg max-w-3xl w-full p-6 relative shadow-lg">
             <button
               onClick={() => setSelectedInsight(null)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 font-bold text-xl"
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 font-bold text-xl cursor-pointer"
             >
               ✕
             </button>
@@ -148,7 +148,7 @@ const Insight = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8] text-white"
+              className="px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8] text-white cursor-pointer"
               onClick={() => window.location.href = "/contact"}
             >
               Start Your Digital Journey

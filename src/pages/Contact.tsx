@@ -226,7 +226,7 @@ const Contact = () => {
                 className={`w-full py-3 px-4 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-[#27A2D8] focus:ring-2 focus:ring-[#27A2D8]/50 min-h-[150px] ${errors.message ? "border-red-500" : ""}`}
               />
 
-              <Button type="submit" className="w-full bg-[#27A2D8] text-white py-3 px-6 rounded-lg font-bold hover:bg-[#50b5c0] transition-colors">
+              <Button type="submit" className="w-full bg-[#27A2D8] text-white py-3 px-6 rounded-lg font-bold hover:bg-[#50b5c0] transition-colors cursor-pointer">
                 Send Message
               </Button>
             </form>
@@ -253,7 +253,7 @@ const Contact = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8] text-white"
+              className="px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8] text-white cursor-pointer"
               onClick={() => (window.location.href = "solutions")}
             >
               View Success Stories

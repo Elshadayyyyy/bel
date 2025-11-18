@@ -120,8 +120,8 @@ const Footer = () => {
                 onClick={() =>
                   window.open("https://google.com", "_blank")
                 }
-                className="px-4 bg-[#27A2D8] hover:bg-[#1f8cb8] text-white rounded-md text-sm shadow-md transition-all"
-              >
+                className="px-4 rounded-md text-sm shadow-md transition-all hover:scale-105 bg-[#27A2D8]  text-white hover:bg-[#27A2D8]-100 cursor-pointer"
+              > 
                 Watch Live Demo
               </Button>
             </div>

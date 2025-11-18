@@ -63,7 +63,8 @@ const SolutionsPage = () => {
     </div>
     <div className="px-6 pb-6">
       <p className="text-base font-normal text-gray-700 leading-relaxed">
-    Deployed a full-scale ERP to manage orders, inventory, logistics, and finance for an African import-export company. </p>
+        Deployed a full-scale Odoo ERP to manage production, sales, inventory, and logistics for an African textile plant.
+      </p>
       <Link
         to="/ERPDetail"
         className="mt-4 inline-block text-[#27A2D8] font-medium hover:underline hover:translate-x-1 transition-transform duration-200"
@@ -81,12 +82,12 @@ const SolutionsPage = () => {
     />
     <div className="px-6 pt-4 pb-3">
       <h3 className="text-xl font-bold leading-snug mb-1">
-       Website for E learning company
+        Charity Platform for SCCMA
       </h3>
     </div>
     <div className="px-6 pb-6">
       <p className="text-base font-normal text-gray-700 leading-relaxed">
-       Developed a student-focused e-learning portal showcasing courses and enabling registration for SkillsBridge
+        Built a volunteer & donation portal with dashboards, secure processes, and automated reports.
       </p>
       <Link
         to="/CharityPlatform"
@@ -100,17 +101,17 @@ const SolutionsPage = () => {
   <div className="border border-gray-200 flex flex-col rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
     <img
       src={DigitalMarketingDetail}
-      alt="Retail Automation"
+      alt="Digital Marketing"
       className="w-full aspect-video object-cover"
     />
     <div className="px-6 pt-4 pb-3">
       <h3 className="text-xl font-bold leading-snug mb-1">
-        Website for marketing company
+        Retail Automation
       </h3>
     </div>
     <div className="px-6 pb-6">
       <p className="text-base font-normal text-gray-700 leading-relaxed">
-        Developed a modern, responsive website to showcase services, and portfolios for digital marketing company.
+        Automated sales-stock syncing for a regional retail chain, ensuring accurate inventory across branches.
       </p>
       <Link
         to="/RetailAuto"
@@ -156,7 +157,7 @@ const SolutionsPage = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8] text-white"
+              className="px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8] text-white cursor-pointer"
               onClick={() => window.location.href = '/contact'}
             >
               Start Your Digital Journey

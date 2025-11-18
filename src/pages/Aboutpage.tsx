@@ -199,14 +199,14 @@ const About = () => {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Button
                                 size="lg"
-                                className="px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8] text-white"
+                                className="px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8] text-white cursor-pointer"
                                 onClick={() => window.location.href = '/Contact'}
                             >
                                 Start Your Digital Journey
                             </Button>
                             <Button
                                 size="lg"
-                                className="px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8] text-white"
+                                className="px-8 py-3 text-lg transition-all duration-200 hover:scale-105 bg-[#27A2D8] text-white cursor-pointer"
                                 onClick={() => window.location.href = '/Solutions'}
                             >
                                 View Success Stories

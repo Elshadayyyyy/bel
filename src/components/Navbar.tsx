@@ -62,7 +62,7 @@ const Navbar = () => {
             ))}
 
             <Button
-              className="ml-2 text-white px-5 py-2 text-sm font-medium transition-all duration-200 hover:scale-105 bg-[#27A2D8]"
+              className="ml-2 text-white px-5 py-2 text-sm font-medium transition-all duration-200 hover:scale-105 bg-[#27A2D8] cursor-pointer"
               onClick={() => (window.location.href = "/contact")}
             >
               Get Demo
