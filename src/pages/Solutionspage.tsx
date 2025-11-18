@@ -35,7 +35,6 @@ const SolutionsPage = () => {
             </p>
           </div>
         </div>
-        <div className="absolute bottom-0 w-full h-1 bg-white"></div>
       </section>
 
       <section className="container mx-auto my-12 px-4 md:px-8 lg:px-12">
